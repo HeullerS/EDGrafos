@@ -51,6 +51,9 @@ def listarVertices(arq):
 	listaVertices = list(range(int(arq[1])))
 	return listaVertices
 
+def converteMAParaMI(matriz):
+	imprimirMatriz(matriz)
+
 #Função que gera uma matriz de incidência a partir de um grafo
 def geraMI(grafo):
 	lin = len(grafo.arestas)
@@ -99,10 +102,6 @@ def geraMA(grafo):
 def imprimirMatriz(matriz):
 	linhas = len(matriz)
 	colunas = len(matriz[0])
-	print("linhas: ", linhas, end = "")
-	print()
-	print("colunas: ", colunas, end = "")
-	print()	
 	for i in range(linhas):
 		for j in range(colunas):
 			print(matriz[i][j]," ",end = "")
@@ -111,26 +110,6 @@ def imprimirMatriz(matriz):
 #n5_dir_unwgt_comb0.txt
 #n10_dir_wgt_comb3.txt
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
+	print("tey")
+	
