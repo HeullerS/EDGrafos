@@ -84,14 +84,12 @@ def geraMA(grafo):
 	for i in range(tamanhoListaVertices): #percorrendo lista de vértices
 		linha = []
 		for j in range(tamanhoListaArestas): #percorrendo lista de arestas 
-			#print("Vértice:", i, "Percorrendo: ", grafo.arestas[j][0])
 			if(str(i) == grafo.arestas[j][0]):
-				#print("entrei")
 				for k in range(tamanhoListaVertices):
 					if(str(k) == grafo.arestas[j][1]):
-						#print("entrei de novo")
-						#print("i: ",i,"j: ",j,"k: ",k)	
 						matriz[i][k] = grafo.arestas[j][2]
+						if(not grafo.direcionado):
+							matriz[k][i] = grafo.arestas[j][2]
 	return matriz
 		
 
