@@ -25,15 +25,23 @@ direcionado = ehDirecionado(nomeArquivo)
 #lista = listarLigacoes(nomeArquivo)
 #print(lista)
 
-
+ponderado = ehPonderado(nomeArquivo)
 listaA = listarArestas(nomeArquivo)
 #print(listaA)
 listaV = listarVertices(nomeArquivo)
-grafo = Grafo(nomeArquivo)
+grafo = Grafo(listaV, listaA, direcionado, ponderado)
 print('Vertices: ', grafo.vertices)
 print('Arestas: ', grafo.arestas)
 imprimirMatriz(geraMA(grafo))
 imprimirMatriz(geraMI(grafo))
+
+
+'''
+matrizMA = geraMA(grafo)
+imprimirMatriz(matrizMA)
+print()
+matrizMI = converteMAParaMI(matrizMA,grafo.direcionado, grafo.ponderado)
+imprimirMatriz(matrizMI)
 
 #print(ehPonderado(nomeArquivo))
 #print("Matriz:\n")
