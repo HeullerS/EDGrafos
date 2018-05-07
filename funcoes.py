@@ -122,6 +122,21 @@ def imprimirMatriz(matriz):
 #n5_dir_unwgt_comb0.txt
 #n10_dir_wgt_comb3.txt
 
+'''
 def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
-	print("tey")
+	qntArestas = len(matriz)
+	qntVertices = len(matriz[0])
+	listaArestas[]
+	for i in range(qntVertices):
+		for j in range(qntArestas):
+			if(matriz[i][j] != '0'):
+				if(matriz[i][j] > '0')
+				listaArestas.append([])
+
+#				
+
+'''
+
+
+
 	

@@ -33,7 +33,10 @@ grafo = Grafo(listaV, listaA, direcionado, ponderado)
 print('Vertices: ', grafo.vertices)
 print('Arestas: ', grafo.arestas)
 imprimirMatriz(geraMA(grafo))
+print("-----------------------------")
 imprimirMatriz(geraMI(grafo))
+#print("-----------------------------")
+#converteMIParaMA(geraMI(grafo), direcionado, ponderado)
 
 
 '''
@@ -47,6 +50,6 @@ imprimirMatriz(matrizMI)
 #print("Matriz:\n")
 #matriz = geraMI(grafo)
 #imprimirMatriz(matriz)
-
+'''
 #n5_dir_unwgt_comb0.txt
 #n10_dir_wgt_comb3.txt
