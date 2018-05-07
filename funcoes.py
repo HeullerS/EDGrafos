@@ -48,16 +48,7 @@ def listarArestas(arq):
 #Função que cria uma lista em que cada elemento dessa lista 
 #é um vértice
 def listarVertices(arq):
-	lista = listarArestas(arq)
-	listaVertices = []
-	#Percorre cada aresta (par de vértices) da lista inserindo em uma lista
-	# de vertices todos os vertices, sem repetição e em ordem crescente 	
-	maiorIndice = 0	
-	for i in range(len(lista)):
-		for j in range(2):
-			if int(lista[i][j]) > int(maiorIndice):#Descobre o vértice de maior índice
-				maiorIndice = lista[i][j]
-	listaVertices = list(range(int(maiorIndice)+1))#Enumera todos os vértices de acordo com o maior índice(para incluir vértices desconexos)
+	listaVertices = list(range(int(arq[1])))
 	return listaVertices
 
 #Função que gera uma matriz de incidência a partir de um grafo
