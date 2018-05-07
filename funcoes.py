@@ -28,6 +28,7 @@ def ehPonderado(arq):
 def listarArestas(arq):
 	caminhoArquivo = "instances/Padrao_Txt/" + arq
 	arquivo = open(caminhoArquivo,'r')
+	arquivo.readline()
 	lista = []
 	#Para cada linha do arquivo cria uma lista com os vértices pertencentes
 	#à aresta. Ao final  temos como retorno uma lista de listas 
@@ -40,7 +41,6 @@ def listarArestas(arq):
 		for linha in arquivo:
 			linha += str(1)		
 			lista.append(linha.split())
-	lista.pop(0)
 	arquivo.close()
 	return lista
 
@@ -69,6 +69,30 @@ def geraMI(grafo):
 			else:
 				linha.append('0') # Insere 0 nas colunas dos vértices que não fazem parte da linha(aresta) analisada
 		matriz.append(linha) # Insere cada linha na matriz
+	return matriz
+
+def geraMA(grafo):
+	tamanhoListaVertices = len(grafo.vertices)
+	tamanhoListaArestas = len(grafo.arestas)
+	matriz = []
+	#criação de uma matriz quadrada nula, sendo que seu tamanho é estabelecido pela quantidade de vértices
+	for i in range(tamanhoListaVertices): 
+		linha = []
+		for j in range(tamanhoListaVertices):
+			linha.append('0')
+		matriz.append(linha)
+	
+
+	for i in range(tamanhoListaVertices): #percorrendo lista de vértices
+		linha = []
+		for j in range(tamanhoListaArestas): #percorrendo lista de arestas 
+			if(str(i) == grafo.arestas[j][0]): #verifica se o vértice pertence a uma ligação de arestas
+				for k in range(tamanhoListaVertices): #caso a afirmativa anterior seja verdadeira é feito um for para achar o segundo vértice da ligação 
+					if(str(k) == grafo.arestas[j][1]): #se k é igual segundo vértice da ligação
+#achado os vértices da ligação, em que "i" é a linha da matriz e "k" a coluna, insere-se o peso da aresta na matriz
+						matriz[i][k] = grafo.arestas[j][2]
+						if(not grafo.direcionado):#se o grafo não é direcionado, é preciso inserir em dois locais
+							matriz[k][i] = grafo.arestas[j][2]
 	return matriz
 
 #Função que imprimi as Matrizes de Adjacência/Incidência
