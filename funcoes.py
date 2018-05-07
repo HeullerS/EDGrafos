@@ -1,3 +1,4 @@
+from classes import *
 #Função que verifica se o grafo é direcionado 
 #ou não-direcionado por meio da leitura da primeira linha do arquivo
 def ehDirecionado(arq):
@@ -70,6 +71,20 @@ def geraMI(grafo):
 				linha.append('0') # Insere 0 nas colunas dos vértices que não fazem parte da linha(aresta) analisada
 		matriz.append(linha) # Insere cada linha na matriz
 	return matriz
+
+
+#Função que converte uma Matriz de adjacência em uma Matriz de incidência
+def converteMAParaMI(matriz,ehDirecionado, ehPonderado):
+	tamanho = len(matriz)
+	listaVertices = list(range(tamanho))
+	listaArestas = []
+	for i in range(tamanho):
+		for j in range(tamanho):
+			if matriz[i][j] != '0': #Para cada posição da matriz verifica se tem uma ligação entre os vértices da posicção i e j
+				listaArestas.append([str(i),str(j),matriz[i][j]]) #Insere na lista de arestas no formato (u,v,p)
+	grafo = Grafo(listaVertices, listaArestas, ehDirecionado, ehPonderado) #Cria grafo auxiliar que será a entrada da geraMI
+	return geraMI(grafo)
+
 
 def geraMA(grafo):
 	tamanhoListaVertices = len(grafo.vertices)
