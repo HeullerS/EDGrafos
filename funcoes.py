@@ -28,6 +28,7 @@ def ehPonderado(arq):
 def listarArestas(arq):
 	caminhoArquivo = "instances/Padrao_Txt/" + arq
 	arquivo = open(caminhoArquivo,'r')
+	arquivo.readline()
 	lista = []
 	#Para cada linha do arquivo cria uma lista com os vértices pertencentes
 	#à aresta. Ao final  temos como retorno uma lista de listas 
@@ -40,7 +41,6 @@ def listarArestas(arq):
 		for linha in arquivo:
 			linha += str(1)		
 			lista.append(linha.split())
-	lista.pop(0)
 	arquivo.close()
 	return lista
 
