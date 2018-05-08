@@ -129,10 +129,6 @@ def imprimirMatriz(matriz):
 			print(matriz[i][j]," ",end = "")
 		print()
 
-#n5_dir_unwgt_comb0.txt
-#n10_dir_wgt_comb3.txt
-
-
 def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
 	qntArestas = len(matriz)
 	qntVertices = len(matriz[0])
@@ -182,7 +178,6 @@ def obtemPred(grafo, vertice):
 	if(verificacaoParametrosObtem(grafo, vertice)):
 		tamanhoMatriz = len(grafo.vertices)
 		matrizAdj = geraMA(grafo)
-		#imprimirMatriz(geraMA(grafo))
 		listaPred = []
 		for i in range (tamanhoMatriz):
 			if((matrizAdj[i][vertice] != '0')):
@@ -253,7 +248,8 @@ def verificacaoParametrosObtem(grafo, vertice):
 
 
 
-
+#n5_dir_unwgt_comb0.txt
+#n10_dir_wgt_comb3.txt
 
 
 
