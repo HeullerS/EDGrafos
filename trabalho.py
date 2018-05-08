@@ -31,7 +31,7 @@ print(listaV)
 imprimirMatriz(geraMA(grafo))
 #print(obtemSucMA(grafo, 4))
 
-print(obtemVizinhosMA(grafo, 2))
+print(ehVizinhoMA(grafo, 1,4))
 
 #n5_dir_unwgt_comb2.txt
 #n5_dir_unwgt_comb0.txt

@@ -211,11 +211,12 @@ def obtemSucMA(grafo, vertice):
 
 
 def ehVizinhoMA(grafo, vertice1 , vertice2):
+	qntVertices = len(grafo.vertices)
 	if((not vertice1 in grafo.vertices[0:qntVertices]) or (not vertice2 in grafo.vertices[0:qntVertices])):
 		print("O vertice escolhido não pertence ao grafo")
 	else:
 		matrizAdj = geraMA(grafo)
-		if(matrizAdj[vertice1][vertice2] != '0'):	
+		if((matrizAdj[vertice1][vertice2] != '0') or (matrizAdj[vertice2][vertice1] != '0')):	
 			return True		
 		else:
 			return False
