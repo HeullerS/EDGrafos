@@ -17,7 +17,7 @@
 • Converte matriz de incidência em lista de adjacência: X
 • Converte matriz de incidência em matriz de adjacência ✔
 				
-<h1>FUNÇÕES DE VISUALIZAÇÃO<\h1>
+<h1>FUNÇÕES DE VISUALIZAÇÃO</h1>
 
 obtemVizinhos: ✔ MA
 obtemPred: ✔ MA
@@ -26,7 +26,7 @@ ehVizinho: X
 ehPredecessor: X
 ehSucessor: X
 
-<h1>FUNÇÕES DE MANIPULAÇÃO<\h1>
+<h1>FUNÇÕES DE MANIPULAÇÃO</h1>
 delVertice: X
 delAresta: X
 geraSubgrafoIV: X
