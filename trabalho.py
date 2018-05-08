@@ -29,7 +29,7 @@ grafo = Grafo(listaV, listaA, direcionado, ponderado)
 print(listaA)
 print(listaV)
 imprimirMatriz(geraMA(grafo))
-print(obtemPred(grafo, 2))
+print(obtemSucMA(grafo, 4))
 
 #n5_dir_unwgt_comb2.txt
 #n5_dir_unwgt_comb0.txt

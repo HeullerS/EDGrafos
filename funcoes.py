@@ -165,6 +165,7 @@ def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
 	grafo = Grafo(listaVertices, listaArestas, ehDirecionado, ehPonderado)	
 	return geraMA(grafo)
 
+
 def obtemVizinhosMA(grafo, vertice):
 	qntVertices = len(grafo.vertices)
 	if(not vertice in grafo.vertices[0:qntVertices]):
@@ -197,6 +198,35 @@ def obtemPredMA(grafo, vertice):
 						
 	return listaPred		
 			 
+#def obtemSuc(grafo, vertice):
+		
+
+def obtemSucMA(grafo, vertice):
+	qntVertices = len(grafo.vertices)
+	if(not vertice in grafo.vertices[0:qntVertices]):
+		print("O vertice escolhido não pertence ao grafo")
+	else:
+		tamanhoMatriz = len(grafo.vertices)
+		matrizAdj = geraMA(grafo)
+		if(grafo.direcionado):
+			listaSuc = []
+			for i in range(tamanhoMatriz):
+				if(matrizAdj[vertice][i] != '0'):
+					listaSuc.append(i)
+		else:
+			listaSuc = obtemVizinhosMA(grafo,vertice)
+			
+	return listaSuc
+
+
+
+
+
+
+
+
+
+
 
 
 
