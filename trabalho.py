@@ -26,8 +26,13 @@ listaV = listarVertices(nomeArquivo)
 direcionado = ehDirecionado(nomeArquivo)
 ponderado = ehPonderado(nomeArquivo)
 grafo = Grafo(listaV, listaA, direcionado, ponderado)
-print(geraMA(grafo))
-print(obtemVizinhosMA(grafo, 2))
+print(listaA)
+print(listaV)
+imprimirMatriz(geraMA(grafo))
+print(obtemPred(grafo, 2))
+
+#n5_dir_unwgt_comb2.txt
+#n5_dir_unwgt_comb0.txt
 
 
 '''
