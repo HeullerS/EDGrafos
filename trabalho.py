@@ -35,8 +35,11 @@ print('Arestas: ', grafo.arestas)
 imprimirMatriz(geraMA(grafo))
 print("-----------------------------")
 imprimirMatriz(geraMI(grafo))
-#print("-----------------------------")
-#converteMIParaMA(geraMI(grafo), direcionado, ponderado)
+print("-----------------------------")
+#print(converteMIParaMA(geraMI(grafo), direcionado, ponderado))
+imprimirMatriz(converteMIParaMA(geraMI(grafo), direcionado, ponderado))
+print("-----------------------------")
+imprimirMatriz(converteMAParaMI(geraMA(grafo), direcionado, ponderado))
 
 
 '''

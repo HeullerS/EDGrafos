@@ -122,20 +122,39 @@ def imprimirMatriz(matriz):
 #n5_dir_unwgt_comb0.txt
 #n10_dir_wgt_comb3.txt
 
-'''
+
 def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
 	qntArestas = len(matriz)
 	qntVertices = len(matriz[0])
-	listaArestas[]
-	for i in range(qntVertices):
-		for j in range(qntArestas):
+	listaArestas = []
+	listaVertices = list(range(qntVertices))
+	jaAcheiPrimeiro = False
+	for i in range(qntArestas):
+		for j in range(qntVertices):
 			if(matriz[i][j] != '0'):
-				if(matriz[i][j] > '0')
-				listaArestas.append([])
+				if(ehDirecionado):
+					if(matriz[i][j] > '0'):
+						posicaoSaindo = j
+						peso = matriz[i][j]
+					else:
+						posicaoChegando = j	
+					
+				else:
+					if(jaAcheiPrimeiro):
+						segundaPosicao = j
+					else:
+						primeiraPosicao = j
+						peso = matriz[i][j]
+						jaAcheiPrimeiro = True
+					
+		jaAcheiPrimeiro = False
+		if(ehDirecionado):
+			listaArestas.append([str(posicaoSaindo), str(posicaoChegando), peso])
+		else:
+			listaArestas.append([str(primeiraPosicao), str(segundaPosicao), peso])
 
-#				
-
-'''
+	grafo = Grafo(listaVertices, listaArestas, ehDirecionado, ehPonderado)	
+	return geraMA(grafo)
 
 
 
