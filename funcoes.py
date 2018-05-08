@@ -167,10 +167,7 @@ def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
 
 
 def obtemVizinhosMA(grafo, vertice):
-	qntVertices = len(grafo.vertices)
-	if(not vertice in grafo.vertices[0:qntVertices]):
-		print("O vertice escolhido não pertence ao grafo")
-	else:
+	if(verificacaoParametrosObtem(grafo, vertice)):
 		matrizAdj = geraMA(grafo)
 		vizinhos = []
 
@@ -178,12 +175,11 @@ def obtemVizinhosMA(grafo, vertice):
 			if((matrizAdj[vertice][i] != '0') or (matrizAdj[i][vertice] != '0')):
 				vizinhos.append(str(i))
 		return vizinhos
+	else:
+		print("O vertice escolhido não pertence ao grafo")
 
 def obtemPredMA(grafo, vertice):
-	qntVertices = len(grafo.vertices)
-	if(not vertice in grafo.vertices[0:qntVertices]):
-		print("O vertice escolhido não pertence ao grafo")
-	else:	
+	if(verificacaoParametrosObtem(grafo, vertice)):
 		tamanhoMatriz = len(grafo.vertices)
 		matrizAdj = geraMA(grafo)
 		#imprimirMatriz(geraMA(grafo))
@@ -191,43 +187,45 @@ def obtemPredMA(grafo, vertice):
 		for i in range (tamanhoMatriz):
 			if((matrizAdj[i][vertice] != '0')):
 				listaPred.append(i)
-						
-	return listaPred		
+		return listaPred
+	else:	
+		print("O vertice escolhido não pertence ao grafo")		
 		
 
 def obtemSucMA(grafo, vertice):
 	qntVertices = len(grafo.vertices)
-	if(not vertice in grafo.vertices[0:qntVertices]):
-		print("O vertice escolhido não pertence ao grafo")
-	else:
+	if(verificacaoParametrosObtem(grafo, vertice)):
 		listaSuc = []
 		tamanhoMatriz = len(grafo.vertices)
 		matrizAdj = geraMA(grafo)
 		for i in range(tamanhoMatriz):
 			if(matrizAdj[vertice][i] != '0'):
 				listaSuc.append(i)
-			
-	return listaSuc
-
+		return listaSuc
+	else:
+		print("O vertice escolhido não pertence ao grafo")
 
 def ehVizinhoMA(grafo, vertice1 , vertice2):
-	qntVertices = len(grafo.vertices)
-	if((not vertice1 in grafo.vertices[0:qntVertices]) or (not vertice2 in grafo.vertices[0:qntVertices])):
-		print("O vertice escolhido não pertence ao grafo")
-	else:
+	if(verificacaoParametrosEh(grafo, vertice1 , vertice2)):
 		matrizAdj = geraMA(grafo)
 		if((matrizAdj[vertice1][vertice2] != '0') or (matrizAdj[vertice2][vertice1] != '0')):	
 			return True		
 		else:
 			return False
+	else:
+		print("O vertice escolhido não pertence ao grafo")
+		
 
 '''
 def ehPredecessorMA(grafo, vertice1, vertice2):
+	qntVertices = len(grafo.vertices)
 	if((not vertice1 in grafo.vertices[0:qntVertices]) or (not vertice2 in grafo.vertices[0:qntVertices])):
 		print("O vertice escolhido não pertence ao grafo")
 	else:
-		eh
+		if()
 '''
+
+	
 '''
 def ehSucessor(grafo, vertice1, vertice2):
 	qntVertices = len(grafo.vertices)
@@ -238,6 +236,21 @@ def ehSucessor(grafo, vertice1, vertice2):
 		matrizAdj = geraMA(grafo)
 		if(matrizAdj[])
 '''
+
+def verificacaoParametrosEh(grafo, vertice1, vertice2):
+	qntVertices = len(grafo.vertices)
+	if((not vertice1 in grafo.vertices[0:qntVertices]) or (not vertice2 in grafo.vertices[0:qntVertices])):
+		return False
+	else:
+		return True
+
+def verificacaoParametrosObtem(grafo, vertice):
+	qntVertices = len(grafo.vertices)
+	if(not vertice in grafo.vertices[0:qntVertices]):
+		return False
+	else:
+		return True
+
 
 
 
