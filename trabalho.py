@@ -32,14 +32,17 @@ listaV = listarVertices(nomeArquivo)
 grafo = Grafo(listaV, listaA, direcionado, ponderado)
 print('Vertices: ', grafo.vertices)
 print('Arestas: ', grafo.arestas)
-imprimirMatriz(geraMA(grafo))
-print("-----------------------------")
-imprimirMatriz(geraMI(grafo))
-print("-----------------------------")
+print("----------- MATRIZ DE ADJ ------------------")
+matrizMA = geraMA(grafo)
+imprimirMatriz(matrizMA)
+print("----------- MATRIZ DE INC ------------------")
+matrizMI = geraMI(grafo)
+imprimirMatriz(matrizMI)
+print("------------- MI PARA MA ----------------")
 #print(converteMIParaMA(geraMI(grafo), direcionado, ponderado))
-imprimirMatriz(converteMIParaMA(geraMI(grafo), direcionado, ponderado))
-print("-----------------------------")
-imprimirMatriz(converteMAParaMI(geraMA(grafo), direcionado, ponderado))
+imprimirMatriz(converteMIParaMA(matrizMI, direcionado, ponderado))
+print("----------- MA PARA MI ------------------")
+imprimirMatriz(converteMAParaMI(matrizMA, direcionado, ponderado))
 
 
 '''
@@ -56,3 +59,4 @@ imprimirMatriz(matrizMI)
 '''
 #n5_dir_unwgt_comb0.txt
 #n10_dir_wgt_comb3.txt
+#n20_undir_wgt_comb3.txt
