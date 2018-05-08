@@ -21,6 +21,16 @@ for i in matriz:
 '''
 
 nomeArquivo = input("Digite o nome do arquivo: ")
+listaA = listarArestas(nomeArquivo)
+listaV = listarVertices(nomeArquivo)
+direcionado = ehDirecionado(nomeArquivo)
+ponderado = ehPonderado(nomeArquivo)
+grafo = Grafo(listaV, listaA, direcionado, ponderado)
+print(geraMA(grafo))
+print(obtemVizinhosMA(grafo, 2))
+
+
+'''
 direcionado = ehDirecionado(nomeArquivo)
 #lista = listarLigacoes(nomeArquivo)
 #print(lista)
@@ -43,7 +53,7 @@ print("------------- MI PARA MA ----------------")
 imprimirMatriz(converteMIParaMA(matrizMI, direcionado, ponderado))
 print("----------- MA PARA MI ------------------")
 imprimirMatriz(converteMAParaMI(matrizMA, direcionado, ponderado))
-
+'''
 
 '''
 matrizMA = geraMA(grafo)
