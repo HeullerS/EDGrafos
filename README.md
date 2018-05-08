@@ -8,14 +8,14 @@
         
 • Matriz de incidências ✔
 
-<h1>CONVERSÕES
+<h1>CONVERSÕES</h1>
 				
-        <p>• Converte matriz de adjacência em lista de adjacência: X </p>
-        <p>• Converte matriz de adjacência em matriz de incidência: ✔</p>
-        <p>• Converte lista de adjacência em matriz de adjacência: X</p>
-        <p>• Converte lista de adjacência em matriz de incidência: X</p>
-        <p>• Converte matriz de incidência em lista de adjacência: X</p>
-        <p>• Converte matriz de incidência em matriz de adjacência ✔</p>
+    	• Converte matriz de adjacência em lista de adjacência: X
+        • Converte matriz de adjacência em matriz de incidência: ✔
+        • Converte lista de adjacência em matriz de adjacência: X
+        • Converte lista de adjacência em matriz de incidência: X
+        • Converte matriz de incidência em lista de adjacência: X
+        • Converte matriz de incidência em matriz de adjacência ✔
 				
 
         obtemVizinhos: ✔ MA
