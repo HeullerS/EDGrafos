@@ -29,7 +29,7 @@ grafo = Grafo(listaV, listaA, direcionado, ponderado)
 print(listaA)
 print(listaV)
 imprimirMatriz(geraMA(grafo))
-print(ehPredecessorMA(grafo, 1, 5))
+print(ehSucessorMA(grafo, 0, 3))
 
 
 #print(obtemSucMA(grafo, 4))
