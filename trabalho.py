@@ -1,5 +1,5 @@
 from funcoes import *
-from classes import *
+from Grafo import *
 from MatrizAdjacencia import *
 
 '''
@@ -29,12 +29,13 @@ ponderado = ehPonderado(nomeArquivo)
 grafo = Grafo(listaV, listaA, direcionado, ponderado)
 matriz = MatrizAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponderado, grafo)
 print(listaA)
+imprimirMatriz(matriz.matriz)
 #print(matriz.obtemVizinhos(2))
 #print(matriz.obtemSuc(0))
 #print(matriz.obtemPred(0))
 #print(matriz.ehVizinho(1,2))
 #print(matriz.ehPredecessor(2,1))
-print(matriz.ehSucessor(1,2))
+#print(matriz.ehSucessor(1,2))
 
 #print(ehSucessorMA(grafo, 0, 3))
 

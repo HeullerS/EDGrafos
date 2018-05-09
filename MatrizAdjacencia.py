@@ -1,4 +1,4 @@
-from classes import *
+from Grafo import *
 import funcoes
 class MatrizAdj(Grafo):
 	def __init__(self, listaVertices, listaArestas, ehDirecionado, ehPonderado, grafo):
@@ -62,7 +62,6 @@ class MatrizAdj(Grafo):
 				return False
 		else:
 			return "O vertice escolhido não pertence ao grafo"
-
 	
 	def verificacaoParametrosObtem(self, vertice):
 		qntVertices = len(self.vertices)
@@ -77,4 +76,14 @@ class MatrizAdj(Grafo):
 			return False
 		else:
 			return True
+'''
+	def delVertice(self,vertice):
+		if(self.verificacaoParametrosObtem(vertice)):
+						
+			
 
+
+
+		else:
+			return "O vertice escolhido não pertence ao grafo"
+'''

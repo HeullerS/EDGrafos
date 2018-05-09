@@ -1,4 +1,4 @@
-from classes import *
+from Grafo import *
 #Função que verifica se o grafo é direcionado 
 #ou não-direcionado por meio da leitura da primeira linha do arquivo
 def ehDirecionado(arq):
