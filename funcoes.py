@@ -242,9 +242,12 @@ def ehSucessor(vertice1, vertice2):
 
 def verificacaoParametrosEh(vertice1, vertice2):
 	qntVertices = vertice1.grafo.quantidadeVertices
-	listaVertices = list(range(int(qntVertices)))
+	listaVertices = vertice1.grafo.vertices
 	vertice1 = int(vertice1.valor)
 	vertice2 = int(vertice2.valor)
+	print(listaVertices)
+	print(vertice1)
+	print(vertice2)
 	if((not vertice1 in listaVertices[0:qntVertices]) or (not vertice2 in listaVertices[0:qntVertices])):
 		return False
 	else:

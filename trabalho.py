@@ -5,14 +5,14 @@ from classes import *
 
 nomeArquivo = input("Digite o nome do arquivo: ")
 listaA = listarArestas(nomeArquivo)
-#listaV = listarValoresVertices(nomeArquivo)
+listaV = listarValoresVertices(nomeArquivo)
 qntVertices = len(listarValoresVertices(nomeArquivo))
 direcionado = ehDirecionado(nomeArquivo)
 ponderado = ehPonderado(nomeArquivo)
-grafo = Grafo(listaA, direcionado, ponderado, qntVertices)
-listaV = listarVerticesObj(grafo)
-vertice1 = listaV[0]
-vertice2 = listaV[3]
+grafo = Grafo(listaV, listaA, direcionado, ponderado)
+listaVer = listarVerticesObj(grafo)
+vertice1 = listaVer[0]
+vertice2 = listaVer[1]
 
 print(listaA)
 print(ehSucessor(vertice1, vertice2))
