@@ -53,6 +53,24 @@ class MatrizAdj(Grafo):
 		else:
 			return "O vertice escolhido não pertence ao grafo"
 
+	def ehPredecessor(self, vertice1, vertice2):
+		if(self.verificacaoParametrosEh(vertice1, vertice2)):
+			if(self.matriz[vertice2][vertice1] != '0'):
+				return True
+			else:
+				return False
+		else:
+			return "O vertice escolhido não pertence ao grafo"
+
+	def ehSucessor(self, vertice1, vertice2):
+		if(self.verificacaoParametrosEh(vertice1, vertice2)):
+			if(self.matriz[vertice1][vertice2] != '0'):
+				return True
+			else:
+				return False
+		else:
+			return "O vertice escolhido não pertence ao grafo"
+
 	
 	def verificacaoParametrosObtem(self, vertice):
 		qntVertices = len(self.vertices)

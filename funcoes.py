@@ -161,43 +161,6 @@ def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
 	grafo = Grafo(listaVertices, listaArestas, ehDirecionado, ehPonderado)	
 	return geraMA(grafo)
 
-
-def ehPredecessor(grafo, vertice1, vertice2):
-	if(verificacaoParametrosEh(grafo, vertice1, vertice2)):
-		matrizAdj = geraMA(grafo)
-		if(matrizAdj[vertice2][vertice1] != '0'):
-			return True
-		else:
-			return False
-	else:
-		return "O vertice escolhido não pertence ao grafo"
-
-def ehSucessor(grafo, vertice1, vertice2):
-	if(verificacaoParametrosEh(grafo, vertice1, vertice2)):
-		matrizAdj = geraMA(grafo)
-		if(matrizAdj[vertice1][vertice2] != '0'):
-			return True
-		else:
-			return False
-	else:
-		return "O vertice escolhido não pertence ao grafo"
-
-def verificacaoParametrosEh(grafo, vertice1, vertice2):
-	qntVertices = len(grafo.vertices)
-	if((not vertice1 in grafo.vertices[0:qntVertices]) or (not vertice2 in grafo.vertices[0:qntVertices])):
-		return False
-	else:
-		return True
-
-def verificacaoParametrosObtem(grafo, vertice):
-	qntVertices = len(grafo.vertices)
-	if(not vertice in grafo.vertices[0:qntVertices]):
-		return False
-	else:
-		return True
-
-
-
 #n5_dir_unwgt_comb0.txt
 #n10_dir_wgt_comb3.txt
 

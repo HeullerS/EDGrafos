@@ -31,7 +31,9 @@ print(listaA)
 #print(matriz.obtemVizinhos(2))
 #print(matriz.obtemSuc(0))
 #print(matriz.obtemPred(0))
-print(matriz.ehVizinho(1,2))
+#print(matriz.ehVizinho(1,2))
+#print(matriz.ehPredecessor(2,1))
+print(matriz.ehSucessor(1,2))
 
 #print(ehSucessorMA(grafo, 0, 3))
 
