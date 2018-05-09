@@ -161,43 +161,6 @@ def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
 	grafo = Grafo(listaVertices, listaArestas, ehDirecionado, ehPonderado)	
 	return geraMA(grafo)
 
-def obtemPred(grafo, vertice):
-	if(verificacaoParametrosObtem(grafo, vertice)):
-		tamanhoMatriz = len(grafo.vertices)
-		matrizAdj = geraMA(grafo)
-		listaPred = []
-		for i in range (tamanhoMatriz):
-			if((matrizAdj[i][vertice] != '0')):
-				listaPred.append(i)
-		return listaPred
-	else:	
-		return "O vertice escolhido não pertence ao grafo"	
-		
-
-def obtemSuc(grafo, vertice):
-	qntVertices = len(grafo.vertices)
-	if(verificacaoParametrosObtem(grafo, vertice)):
-		listaSuc = []
-		tamanhoMatriz = len(grafo.vertices)
-		matrizAdj = geraMA(grafo)
-		for i in range(tamanhoMatriz):
-			if(matrizAdj[vertice][i] != '0'):
-				listaSuc.append(i)
-		return listaSuc
-	else:
-		return "O vertice escolhido não pertence ao grafo"
-
-def ehVizinho(grafo, vertice1 , vertice2):
-	if(verificacaoParametrosEh(grafo, vertice1 , vertice2)):
-		matrizAdj = geraMA(grafo)
-		if((matrizAdj[vertice1][vertice2] != '0') or (matrizAdj[vertice2][vertice1] != '0')):	
-			return True		
-		else:
-			return False
-	else:
-		return "O vertice escolhido não pertence ao grafo"
-		
-
 
 def ehPredecessor(grafo, vertice1, vertice2):
 	if(verificacaoParametrosEh(grafo, vertice1, vertice2)):

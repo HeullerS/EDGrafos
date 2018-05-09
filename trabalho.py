@@ -28,7 +28,10 @@ ponderado = ehPonderado(nomeArquivo)
 grafo = Grafo(listaV, listaA, direcionado, ponderado)
 matriz = MatrizAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponderado, grafo)
 print(listaA)
-print(matriz.obtemVizinhos(5))
+#print(matriz.obtemVizinhos(2))
+#print(matriz.obtemSuc(0))
+#print(matriz.obtemPred(0))
+print(matriz.ehVizinho(1,2))
 
 #print(ehSucessorMA(grafo, 0, 3))
 
