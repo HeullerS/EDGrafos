@@ -28,8 +28,17 @@ direcionado = ehDirecionado(nomeArquivo)
 ponderado = ehPonderado(nomeArquivo)
 grafo = Grafo(listaV, listaA, direcionado, ponderado)
 matriz = MatrizAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponderado, grafo)
-print(listaA)
+
+print("ANTIGA")
 imprimirMatriz(matriz.matriz)
+matriz.delVertice(1)
+print("NOVA")
+imprimirMatriz(matriz.matriz)
+#print(matriz.obtemVizinhos(0))
+
+
+#print(listaA)
+#imprimirMatriz(matriz.matriz)
 #print(matriz.obtemVizinhos(2))
 #print(matriz.obtemSuc(0))
 #print(matriz.obtemPred(0))

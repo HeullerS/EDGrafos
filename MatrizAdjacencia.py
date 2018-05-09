@@ -9,8 +9,10 @@ class MatrizAdj(Grafo):
 	def obtemVizinhos(self, vertice):
 		if(self.verificacaoParametrosObtem(vertice)):
 			vizinhos = []
-			for i in range (len(self.vertices)):
-				if((self.matriz[vertice][i] != '0') or (self.matriz[i][vertice] != '0')):
+			posicaoVertice = self.vertices.index(vertice)
+			for i in (self.vertices):
+				posicaoI = self.vertices.index(i)
+				if((self.matriz[posicaoVertice][posicaoI] != '0') or (self.matriz[posicaoI][posicaoVertice] != '0')):
 					vizinhos.append(str(i))
 			return vizinhos
 		else:
@@ -76,14 +78,38 @@ class MatrizAdj(Grafo):
 			return False
 		else:
 			return True
-'''
+
 	def delVertice(self,vertice):
 		if(self.verificacaoParametrosObtem(vertice)):
-						
-			
-
-
-
+			indice = self.vertices.index(vertice)
+			self.vertices.pop(indice)
+			self.matriz.pop(indice)
+			for i in range (len(self.vertices)):
+				self.matriz[i].pop(indice)
+		
 		else:
 			return "O vertice escolhido não pertence ao grafo"
-'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
