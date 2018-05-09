@@ -10,9 +10,10 @@ qntVertices = len(listarValoresVertices(nomeArquivo))
 direcionado = ehDirecionado(nomeArquivo)
 ponderado = ehPonderado(nomeArquivo)
 grafo = Grafo(listaV, listaA, direcionado, ponderado)
-listaVer = listarVerticesObj(grafo)
-vertice1 = listaVer[0]
-vertice2 = listaVer[1]
+vertice1 = grafo.verticesObj[0]
+vertice2 = grafo.verticesObj[2]
+
+#vertice2 = grafo.verticesObj[1]
 
 print(listaA)
 print(ehSucessor(vertice1, vertice2))

@@ -217,8 +217,10 @@ def ehVizinho(grafo, vertice1 , vertice2):
 		
 
 
-def ehPredecessor(grafo, vertice1, vertice2):
+def ehPredecessor(vertice1, vertice2):
 	if(verificacaoParametrosEh(grafo, vertice1, vertice2)):
+		vertice1 = int(vertice1.valor)
+		vertice2 = int(vertice2.valor)
 		matrizAdj = geraMA(grafo)
 		if(matrizAdj[vertice2][vertice1] != '0'):
 			return True
@@ -259,15 +261,6 @@ def verificacaoParametrosObtem(grafo, vertice):
 		return False
 	else:
 		return True
-
-
-def listarVerticesObj(grafo):
-	listaVertices = []
-	for i in range(grafo.quantidadeVertices):
-		vertice = Vertice(str(i), grafo)
-		listaVertices.append(vertice)
-	grafo.setVertices(listaVertices)
-	return listaVertices
 		
 
 
