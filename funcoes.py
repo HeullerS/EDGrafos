@@ -48,7 +48,7 @@ def listarArestas(arq):
 
 #Função que cria uma lista em que cada elemento dessa lista 
 #é um vértice
-def listarVertices(arq):
+def listarValoresVertices(arq):
 	qntdVertices  = ""
 	indice = 1
 	while(arq[indice] != "_"): #Extrai a quantidade de vértices do nme do arquivo
@@ -227,8 +227,11 @@ def ehPredecessor(grafo, vertice1, vertice2):
 	else:
 		return "O vertice escolhido não pertence ao grafo"
 
-def ehSucessor(grafo, vertice1, vertice2):
-	if(verificacaoParametrosEh(grafo, vertice1, vertice2)):
+def ehSucessor(vertice1, vertice2):
+	grafo = vertice1.grafo
+	if(verificacaoParametrosEh(vertice1, vertice2)):
+		vertice1 = int(vertice1.valor)
+		vertice2 = int(vertice2.valor)
 		matrizAdj = geraMA(grafo)
 		if(matrizAdj[vertice1][vertice2] != '0'):
 			return True
@@ -237,9 +240,12 @@ def ehSucessor(grafo, vertice1, vertice2):
 	else:
 		return "O vertice escolhido não pertence ao grafo"
 
-def verificacaoParametrosEh(grafo, vertice1, vertice2):
-	qntVertices = len(grafo.vertices)
-	if((not vertice1 in grafo.vertices[0:qntVertices]) or (not vertice2 in grafo.vertices[0:qntVertices])):
+def verificacaoParametrosEh(vertice1, vertice2):
+	qntVertices = vertice1.grafo.quantidadeVertices
+	listaVertices = list(range(int(qntVertices)))
+	vertice1 = int(vertice1.valor)
+	vertice2 = int(vertice2.valor)
+	if((not vertice1 in listaVertices[0:qntVertices]) or (not vertice2 in listaVertices[0:qntVertices])):
 		return False
 	else:
 		return True
@@ -250,6 +256,30 @@ def verificacaoParametrosObtem(grafo, vertice):
 		return False
 	else:
 		return True
+
+
+def listarVerticesObj(grafo):
+	listaVertices = []
+	for i in range(grafo.quantidadeVertices):
+		vertice = Vertice(str(i), grafo)
+		listaVertices.append(vertice)
+	grafo.setVertices(listaVertices)
+	return listaVertices
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
