@@ -1,5 +1,6 @@
 from funcoes import *
 from classes import *
+from MatrizAdjacencia import *
 
 '''
 matriz = []
