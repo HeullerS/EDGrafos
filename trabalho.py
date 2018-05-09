@@ -26,10 +26,11 @@ listaV = listarVertices(nomeArquivo)
 direcionado = ehDirecionado(nomeArquivo)
 ponderado = ehPonderado(nomeArquivo)
 grafo = Grafo(listaV, listaA, direcionado, ponderado)
+matriz = MatrizAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponderado, grafo)
 print(listaA)
 print(listaV)
-imprimirMatriz(geraMA(grafo))
-print(ehSucessorMA(grafo, 0, 3))
+imprimirMatriz(matriz.matriz)
+#print(ehSucessorMA(grafo, 0, 3))
 
 
 #print(obtemSucMA(grafo, 4))
