@@ -1,46 +1,35 @@
 # EDGrafos
 
-ESTRUTURA DE DADOS
-• Matriz de adjacências ✔
-        obtemVizinhos: X
-        obtemPred: X
-        obtemSuc: X
-        ehVizinho: X
-        ehPredecessor: X
-        ehSucessor: X
-        delVertice: X
-        delAresta: X
-        geraSubgrafoIV: X
-        geraSubgrafoIA: X
-        
-• Lista de adjacências X
-        obtemVizinhos: X
-        obtemPred: X
-        obtemSuc: X
-        ehVizinho: X
-        ehPredecessor: X
-        ehSucessor: X
-        delVertice: X
-        delAresta: X
-        geraSubgrafoIV: X
-        geraSubgrafoIA: X
-        
-• Matriz de incidências ✔
-        obtemVizinhos: X
-        obtemPred: X
-        obtemSuc: X
-        ehVizinho: X
-        ehPredecessor: X
-        ehSucessor: X
-        delVertice: X
-        delAresta: X
-        geraSubgrafoIV: X
-        geraSubgrafoIA: X
+<h1>ESTRUTURA DE DADOS</h1>
 
-CONVERSÕES
-• Converte matriz de adjacência em lista de adjacência: X
-• Converte matriz de adjacência em matriz de incidência: ✔
-• Converte lista de adjacência em matriz de adjacência: X
-• Converte lista de adjacência em matriz de incidência: X
-• Converte matriz de incidência em lista de adjacência: X
-• Converte matriz de incidência em matriz de adjacência ✔
+	• Matriz de adjacências ✔
+
+	• Lista de adjacências X
+        
+	• Matriz de incidências ✔
+
+<h1>CONVERSÕES</h1>
+				
+	• Converte matriz de adjacência em lista de adjacência: X
+	• Converte matriz de adjacência em matriz de incidência: ✔
+	• Converte lista de adjacência em matriz de adjacência: X
+	• Converte lista de adjacência em matriz de incidência: X
+	• Converte matriz de incidência em lista de adjacência: X
+	• Converte matriz de incidência em matriz de adjacência ✔
+				
+<h1>FUNÇÕES DE VISUALIZAÇÃO</h1>
+
+	obtemVizinhos: ✔ MA
+	obtemPred: ✔ MA
+	obtemSuc: ✔ MA
+	ehVizinho: ✔ MA
+	ehPredecessor: ✔ MA
+	ehSucessor: ✔ MA
+
+<h1>FUNÇÕES DE MANIPULAÇÃO</h1>
+
+	delVertice: X
+	delAresta: X
+	geraSubgrafoIV: X
+	geraSubgrafoIA: X
+  
