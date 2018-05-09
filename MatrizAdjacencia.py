@@ -82,6 +82,12 @@ class MatrizAdj(Grafo):
 	def delVertice(self,vertice):
 		if(self.verificacaoParametrosObtem(vertice)):
 			indice = self.vertices.index(vertice)
+			for i in range (len(self.vertices)):
+				if((str(vertice) in self.arestas[i][0:2])):
+					print("Vertice: ", vertice)
+					print(self.arestas[i][0])
+					print(self.arestas[i][1])
+					self.arestas.pop(i)
 			self.vertices.pop(indice)
 			self.matriz.pop(indice)
 			for i in range (len(self.vertices)):
