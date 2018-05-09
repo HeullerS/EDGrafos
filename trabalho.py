@@ -28,8 +28,8 @@ ponderado = ehPonderado(nomeArquivo)
 grafo = Grafo(listaV, listaA, direcionado, ponderado)
 matriz = MatrizAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponderado, grafo)
 print(listaA)
-print(listaV)
-imprimirMatriz(matriz.matriz)
+print(matriz.obtemVizinhos(5))
+
 #print(ehSucessorMA(grafo, 0, 3))
 
 

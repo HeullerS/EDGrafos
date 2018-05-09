@@ -161,19 +161,6 @@ def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
 	grafo = Grafo(listaVertices, listaArestas, ehDirecionado, ehPonderado)	
 	return geraMA(grafo)
 
-
-def obtemVizinhos(grafo, vertice):
-	if(verificacaoParametrosObtem(grafo, vertice)):
-		matrizAdj = geraMA(grafo)
-		vizinhos = []
-
-		for i in range(qntVertices):
-			if((matrizAdj[vertice][i] != '0') or (matrizAdj[i][vertice] != '0')):
-				vizinhos.append(str(i))
-		return vizinhos
-	else:
-		return "O vertice escolhido não pertence ao grafo"
-
 def obtemPred(grafo, vertice):
 	if(verificacaoParametrosObtem(grafo, vertice)):
 		tamanhoMatriz = len(grafo.vertices)
