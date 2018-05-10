@@ -1,4 +1,4 @@
-# EDGrafos
+## EDGrafos
 
 <h1>ESTRUTURA DE DADOS</h1>
 
@@ -14,8 +14,8 @@
 		FUNÇÕES DE MANIPULAÇÃO
 			delVertice: ✔ 
 			delAresta: ✔ 
-			geraSubgrafoIV: X
-			geraSubgrafoIA: X
+			geraSubgrafoIV: ✔
+			geraSubgrafoIA: ✔
 
 	• Lista de adjacências X
 	
@@ -55,3 +55,4 @@
 	• Converte lista de adjacência em matriz de incidência: X
 	• Converte matriz de incidência em lista de adjacência: X
 	• Converte matriz de incidência em matriz de adjacência ✔
+
