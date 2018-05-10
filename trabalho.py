@@ -37,12 +37,15 @@ matriz = MatrizAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponder
 #matriz.geraSubgrafoIV(conjuntoVertices)
 #imprimirMatriz(matriz.matriz)
 conjuntoArestas = [[3,4],[4,2]]
-print(matriz.arestas)
+print("ARESTAS: " ,matriz.arestas)
+print("VÉRTICES: ", matriz.vertices)
 
 print("NOVA")
 matriz.geraSubgrafoIA(conjuntoArestas)
 
-print(matriz.arestas)
+
+print("ARESTAS: " ,matriz.arestas)
+print("VÉRTICES: ", matriz.vertices)
 #print(matriz.vertices)
 
 #matriz.delVertice(4)
