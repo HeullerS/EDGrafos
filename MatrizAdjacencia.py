@@ -94,9 +94,6 @@ class MatrizAdj(Grafo):
 			i = 0
 			while(i < len(self.arestas)):
 				if((str(vertice) in self.arestas[i][0:2])):
-					print("Vertice: ", vertice)
-					print(self.arestas[i][0])
-					print(self.arestas[i][1])
 					self.arestas.pop(i)
 					i = i - 1
 				i = i + 1
@@ -108,8 +105,24 @@ class MatrizAdj(Grafo):
 		
 		else:
 			return "O vertice escolhido não pertence ao grafo"
+	
+	def delAresta(self,vertice1, vertice2):
+		if(self.verificacaoParametrosEh(vertice1,vertice2)):
+			tem = False
+			i = 0
+			while(i < len(self.arestas)):
+				if((str(vertice1) in self.arestas[i][0]) and (str(vertice2) in self.arestas[i][1])):
+					self.arestas.pop(i)
+					i = i - 1
+					tem = True
+				i = i + 1					
+			if(not tem):
+				print ("A aresta escolhida não pertence ao grafo")
 
+		else:
+			print("A aresta escolhida não pertence ao grafo")
 
+	
 
 
 
