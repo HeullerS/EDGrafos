@@ -35,11 +35,11 @@ class MatrizAdj(Grafo):
 			return listaPred
 		else:	
 			return "O vertice escolhido não pertence ao grafo"
-	
+
 	def ehVizinho(self, vertice1 , vertice2):
 		if(self.verificacaoParametrosEh(vertice1 , vertice2)):
-			if((self.matriz[vertice1][vertice2] != '0') or (self.matriz[vertice2][vertice1] != '0')):	
-				return True		
+			if((self.matriz[vertice1][vertice2] != '0') or (self.matriz[vertice2][vertice1] != '0')):
+				return True
 			else:
 				return False
 		else:

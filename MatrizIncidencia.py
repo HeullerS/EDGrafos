@@ -16,7 +16,7 @@ class MatrizInc(object):
 					for j in range(len(self.vertices)):
 						if(self.matriz[i][j] != '0') and (j != vertice):
 							ehLoop = False
-							if(str(j) not in vizinhos):							
+							if(str(j) not in vizinhos):
 								vizinhos.append(str(j))
 					if(ehLoop):
 						vizinhos.append(str(vertice))

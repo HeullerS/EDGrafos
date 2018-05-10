@@ -35,12 +35,12 @@ def listarArestas(arq):
 	#à aresta. Ao final  temos como retorno uma lista de listas 
 	#Cada elemento da lista final possui 3 valores(u, v, p) em que
 	#u e v são vértices e p representa o peso da aresta.
-	if(ehPonderado(arq)): 	
+	if(ehPonderado(arq)):
 		for linha in arquivo:
 			lista.append(linha.split())
 	else:
 		for linha in arquivo:
-			linha += str(1)		
+			linha += str(1)	
 			lista.append(linha.split())
 	arquivo.close()
 	return lista
