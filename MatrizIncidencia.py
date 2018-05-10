@@ -50,15 +50,20 @@ class MatrizInc(object):
 			listaPred = []
 			posicaoVertice = self.vertices.index(vertice)
 			for i in range(len(self.arestas)):
-				ehLoop = True
-				if(self.matriz[i][posicaoVertice] != '0'):
+				if(self.matriz[i][posicaoVertice] < '0'):
 					for j in self.vertices:
 						posicaoJ = self.vertices.index(j)
 						if(self.matriz[i][posicaoJ] > '0') and (posicaoJ != posicaoVertice):
-							ehLoop = False
 							listaPred.append(str(j))
-					if(ehLoop and str(vertice) not in listaPred):
+				elif(self.matriz[i][posicaoVertice] > '0'):
+					ehLoop = True
+					for j in self.vertices:
+						posicaoJ = self.vertices.index(j)
+						if(self.matriz[i][j] != '0'):
+							ehLoop = False
+					if(ehLoop):
 						listaPred.append(str(vertice))
+					
 			return listaPred
 		else:
 			return "O vertice escolhido não pertence ao grafo"
