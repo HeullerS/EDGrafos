@@ -16,7 +16,8 @@ matriz = MatrizInc(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponder
 print(listaA)
 imprimirMatriz(matriz.matriz)
 print("VIZINHOS: ",matriz.obtemVizinhos(3))
-)
+print("SUCESSORES :",matriz.obtemSuc(3))
+print("PREDECESSORES: ",matriz.obtemPred(3))
 
 
 
