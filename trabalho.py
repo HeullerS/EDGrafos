@@ -33,7 +33,7 @@ matriz = MatrizAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponder
 #imprimirMatriz(matriz.matriz)
 #print(matriz.vertices)
 print(matriz.arestas)
-matriz.delVertice(0)
+matriz.delVertice(4)
 #print("NOVA")
 #imprimirMatriz(matriz.matriz)
 #print(matriz.vertices)
