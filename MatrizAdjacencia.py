@@ -116,13 +116,39 @@ class MatrizAdj(Grafo):
 					i = i - 1
 					tem = True
 				i = i + 1					
-			if(not tem):
-				print ("A aresta escolhida não pertence ao grafo")
+			#if(not tem):
+				#print ("A aresta escolhida não pertence ao grafo")
 
-		else:
-			print("A aresta escolhida não pertence ao grafo")
+		#else:
+			#print("A aresta escolhida não pertence ao grafo")
 
+	def geraSubgrafoIV(self, conjuntoVertices):
+		for i in conjuntoVertices:
+			self.delVertice(i)
+		
+
+	def geraSubgrafoIA(self, conjuntoVertices):
+		listaVertices = []
+		for i in conjuntoVertices:
+			self.delAresta(i[0],i[1])
+			listaVertices.append(str(i[0]))
+			listaVertices.append(str(i[1]))
+
+		semRepeticaoVertices = list(set(listaVertices))
+		listaRemocaoVertices = []	
+
+		
+		for i in semRepeticaoVertices:
+			for j in range (len(self.arestas)):
+				if((i in self.arestas[[j][0]) or (i in self.arestas[j][1])):
+					listaRemocaoVertices.append(i) 
+				
+		print(semRepeticaoVertices)				
+		print(listaRemocaoVertices)	
 	
+	#for i in conjuntoVertices:	
+		#for j in range(len(self.vertices))
+			#if(i[0]):	
 
 
 
@@ -136,10 +162,7 @@ class MatrizAdj(Grafo):
 
 
 
-
-
-
-
+[[i]]
 
 
 

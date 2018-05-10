@@ -32,9 +32,18 @@ matriz = MatrizAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponder
 #print("ANTIGA")
 #imprimirMatriz(matriz.matriz)
 #print(matriz.vertices)
+#conjuntoVertices = [1,2]
+#print(matriz.arestas)
+#matriz.geraSubgrafoIV(conjuntoVertices)
+#imprimirMatriz(matriz.matriz)
+conjuntoArestas = [[3,4],[4,2]]
 print(matriz.arestas)
-matriz.delAresta(3,0)
+
+print("NOVA")
+matriz.geraSubgrafoIA(conjuntoArestas)
+
 print(matriz.arestas)
+#print(matriz.vertices)
 
 #matriz.delVertice(4)
 #print("NOVA")
