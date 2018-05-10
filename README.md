@@ -1,8 +1,9 @@
-# EDGrafos
+## EDGrafos
 
 <h1>ESTRUTURA DE DADOS</h1>
 
 	• Matriz de adjacências ✔
+	
 		FUNÇÕES DE VISUALIZAÇÃO
 			obtemVizinhos: ✔ 
 			obtemPred: ✔ 
@@ -11,12 +12,13 @@
 			ehPredecessor: ✔ 
 			ehSucessor: ✔ 
 		FUNÇÕES DE MANIPULAÇÃO
-			delVertice: X
-			delAresta: X
+			delVertice: ✔ 
+			delAresta: ✔ 
 			geraSubgrafoIV: X
 			geraSubgrafoIA: X
 
 	• Lista de adjacências X
+	
 		FUNÇÕES DE VISUALIZAÇÃO
 			obtemVizinhos: X
 			obtemPred: X
@@ -31,6 +33,7 @@
 			geraSubgrafoIA: X
         
 	• Matriz de incidências ✔
+	
 		FUNÇÕES DE VISUALIZAÇÃO
 			obtemVizinhos: X
 			obtemPred: X
@@ -52,4 +55,4 @@
 	• Converte lista de adjacência em matriz de incidência: X
 	• Converte matriz de incidência em lista de adjacência: X
 	• Converte matriz de incidência em matriz de adjacência ✔
-				
+
