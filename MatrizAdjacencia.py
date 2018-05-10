@@ -9,8 +9,10 @@ class MatrizAdj(Grafo):
 	def obtemVizinhos(self, vertice):
 		if(self.verificacaoParametrosObtem(vertice)):
 			vizinhos = []
-			for i in range (len(self.vertices)):
-				if((self.matriz[vertice][i] != '0') or (self.matriz[i][vertice] != '0')):
+			posicaoVertice = self.vertices.index(vertice)
+			for i in (self.vertices):
+				posicaoI = self.vertices.index(i)
+				if((self.matriz[posicaoVertice][posicaoI] != '0') or (self.matriz[posicaoI][posicaoVertice] != '0')):
 					vizinhos.append(str(i))
 			return vizinhos
 		else:
@@ -19,9 +21,11 @@ class MatrizAdj(Grafo):
 	def obtemSuc(self,vertice):
 		if(self.verificacaoParametrosObtem(vertice)):
 			listaSuc = []
+			indice = self.vertices.index(vertice)
 			for i in range(len(self.vertices)):
-				if(self.matriz[vertice][i] != '0'):
-					listaSuc.append(i)
+				posicaoI = self.vertices.index(i)
+				if(self.matriz[indice][posicaoI] != '0'):
+					listaSuc.append(str(i))
 			return listaSuc
 		else:
 			return "O vertice escolhido não pertence ao grafo"
@@ -29,17 +33,21 @@ class MatrizAdj(Grafo):
 	def obtemPred(self, vertice):
 		if(self.verificacaoParametrosObtem(vertice)):
 			listaPred = []
+			indice = self.vertices.index(vertice)
 			for i in range (len(self.vertices)):
-				if((self.matriz[i][vertice] != '0')):
-					listaPred.append(i)
+				posicaoI = self.vertices.index(i)
+				if((self.matriz[posicaoI][indice] != '0')):
+					listaPred.append(str(i))
 			return listaPred
 		else:	
 			return "O vertice escolhido não pertence ao grafo"
-
+	
 	def ehVizinho(self, vertice1 , vertice2):
 		if(self.verificacaoParametrosEh(vertice1 , vertice2)):
-			if((self.matriz[vertice1][vertice2] != '0') or (self.matriz[vertice2][vertice1] != '0')):
-				return True
+			indice1 = self.vertices.index(vertice1)
+			indice2 = self.vertices.index(vertice2)
+			if((self.matriz[indice1][indice2] != '0') or (self.matriz[indice2][indice1] != '0')):	
+				return True		
 			else:
 				return False
 		else:
@@ -47,7 +55,9 @@ class MatrizAdj(Grafo):
 
 	def ehPredecessor(self, vertice1, vertice2):
 		if(self.verificacaoParametrosEh(vertice1, vertice2)):
-			if(self.matriz[vertice2][vertice1] != '0'):
+			indice1 = self.vertices.index(vertice1)
+			indice2 = self.vertices.index(vertice2)
+			if(self.matriz[indice2][indice1] != '0'):
 				return True
 			else:
 				return False
@@ -56,7 +66,9 @@ class MatrizAdj(Grafo):
 
 	def ehSucessor(self, vertice1, vertice2):
 		if(self.verificacaoParametrosEh(vertice1, vertice2)):
-			if(self.matriz[vertice1][vertice2] != '0'):
+			indice1 = self.vertices.index(vertice1)
+			indice2 = self.vertices.index(vertice2)
+			if(self.matriz[indice1][indice2] != '0'):
 				return True
 			else:
 				return False
@@ -76,3 +88,61 @@ class MatrizAdj(Grafo):
 			return False
 		else:
 			return True
+
+	def delVertice(self,vertice):
+		if(self.verificacaoParametrosObtem(vertice)):
+			i = 0
+			while(i < len(self.arestas)):
+				if((str(vertice) in self.arestas[i][0:2])):
+					self.arestas.pop(i)
+					i = i - 1
+				i = i + 1
+			indice = self.vertices.index(vertice)
+			self.vertices.pop(indice)
+			self.matriz.pop(indice)
+			for i in range (len(self.vertices)):
+				self.matriz[i].pop(indice)
+		
+		else:
+			return "O vertice escolhido não pertence ao grafo"
+	
+	def delAresta(self,vertice1, vertice2):
+		if(self.verificacaoParametrosEh(vertice1,vertice2)):
+			tem = False
+			i = 0
+			while(i < len(self.arestas)):
+				if((str(vertice1) in self.arestas[i][0]) and (str(vertice2) in self.arestas[i][1])):
+					self.arestas.pop(i)
+					i = i - 1
+					tem = True
+				i = i + 1					
+			if(not tem):
+				print ("A aresta escolhida não pertence ao grafo")
+
+		else:
+			print("A aresta escolhida não pertence ao grafo")
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
