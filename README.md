@@ -14,8 +14,8 @@
 		FUNÇÕES DE MANIPULAÇÃO
 			delVertice: ✔ 
 			delAresta: ✔ 
-			geraSubgrafoIV: X
-			geraSubgrafoIA: X
+			geraSubgrafoIV: ✔
+			geraSubgrafoIA: ✔
 
 	• Lista de adjacências X
 	
