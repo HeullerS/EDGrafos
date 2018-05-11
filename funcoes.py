@@ -59,6 +59,7 @@ def listarValoresVertices(arq):
 
 #Função que gera uma matriz de incidência a partir de um grafo
 def geraMI(grafo):
+	#FAZER CASO DO LOOP
 	lin = len(grafo.arestas)
 	col = len(grafo.vertices)
 	matriz = []
