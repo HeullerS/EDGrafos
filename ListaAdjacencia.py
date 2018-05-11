@@ -6,22 +6,22 @@ class ListaAdj(Grafo):
 		self.grafo = grafo
 		self.lista = funcoes.geraLA(grafo)
 
-def obtemVizinhos(self, vertice):
+	def obtemVizinhos(self, vertice):
 		if(self.verificacaoParametrosObtem(vertice)):
 			vizinhos = []
-			posicaoVertice = self.vertices.index(vertice)
-			for i in (self.vertices):
-				posicaoI = self.vertices.index(i)
-				if((self.matriz[posicaoVertice][posicaoI] != '0') or (self.matriz[posicaoI][posicaoVertice] != '0')):
-					vizinhos.append(str(i))
-			return vizinhos
-		else:
-			return "O vertice escolhido não pertence ao grafo"
-
-
-def verificacaoParametrosObtem(self, vertice):
-		qntVertices = len(self.vertices)
-		if(not vertice in self.vertices[0:qntVertices]):
-			return False
-		else:
-			return True
+			posicaoVertice = self.lista[vertice]
+			
+			print(posicaoVertice)
+			contador = 0
+			for i in posicaoVertice:
+				print(posicaoVertice[contador][0])
+				vizinhos.append(posicaoVertice[contador][0])
+				contador += 1
+		return vizinhos
+			
+	def verificacaoParametrosObtem(self, vertice):
+			qntVertices = len(self.vertices)
+			if(not vertice in self.vertices[0:qntVertices]):
+				return False
+			else:
+				return True

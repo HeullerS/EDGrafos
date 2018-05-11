@@ -167,7 +167,6 @@ def geraLA(grafo):
 	listaAdjacencia = []
 	for i in range (len(grafo.vertices)):
 		listaAdjacencia.append([])
-	print(listaAdjacencia)
 
 	
 	dicionario = {}
