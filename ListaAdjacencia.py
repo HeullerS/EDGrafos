@@ -8,19 +8,14 @@ class ListaAdj(Grafo):
 
 	def obtemVizinhos(self, vertice):
 		if(self.verificacaoParametrosObtem(vertice)):
-			vizinhos = []
-			posicaoVertice = self.lista[vertice]
+			sucessores = self.obtemSuc(vertice)
+			predecessores = self.obtemPred(vertice)
+			vizinhos = sucessores + predecessores
+			vizinhos = list(set(vizinhos))
+			vizinhos.sort()
 			
-			contador = 0
-			for i in posicaoVertice:
-				vizinhos.append(posicaoVertice[contador][0])
-				verticeLigado = posicaoVertice[contador][0]
-				contador += 1
-		
-		print(vizinhos)
-		return vizinhos
-	
-	
+			return vizinhos
+			
 	def obtemSuc(self, vertice):
 		if(self.verificacaoParametrosObtem(vertice)):
 			sucessores = []
@@ -45,7 +40,7 @@ class ListaAdj(Grafo):
 				posicaoI = self.lista[i]
 				for j in range(len(posicaoI)):
 					if(posicaoI[j][0] == str(vertice)):
-						predecessores.append(i)
+						predecessores.append(str(i))
 		
 		return predecessores
 	
