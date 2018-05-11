@@ -15,6 +15,8 @@ class ListaAdj(Grafo):
 			vizinhos.sort()
 			
 			return vizinhos
+		else:
+			return "O vertice escolhido não pertence ao grafo"
 			
 	def obtemSuc(self, vertice):
 		if(self.verificacaoParametrosObtem(vertice)):
@@ -42,14 +44,88 @@ class ListaAdj(Grafo):
 					if(posicaoI[j][0] == str(vertice)):
 						predecessores.append(str(i))
 		
-		return predecessores
-	
-	
+			return predecessores
 		
+		else:
+			return "O vertice escolhido não pertence ao grafo"
+	
+
+
+	def ehVizinho(self, vertice1 , vertice2):
+		if(self.verificacaoParametrosEh(vertice1 , vertice2)):
+			
+
+			vizinhosDeUm = self.obtemVizinhos(vertice1)
+			vizinhosDeDois = self.obtemVizinhos(vertice2)
+			print(vizinhosDeUm)
+			print(vizinhosDeDois)
+			
+			ehVizinhos = False
+			for i in vizinhosDeUm:
+				if(str(vertice2) == i):
+					ehVizinhos = True
+
+			for i in vizinhosDeDois:
+				if(str(vertice1) == i):
+					ehVizinhos = True
+			return ehVizinhos
+		else:
+			return "O vertice escolhido não pertence ao grafo"
+
+
+	def ehPredecessor(self, vertice1 , vertice2):
+		if(self.verificacaoParametrosEh(vertice1 , vertice2)):
+			
+			predecessoresDeUm = self.obtemPred(vertice1)
+			ehPredec = False
+			i = 0
+
+			while(i < len(predecessoresDeUm) and ehPredec == False):
+				if((str(vertice2) == predecessoresDeUm[i])):
+					ehPredec = True
+				else:
+					ehPredec = False
+				i = i + 1
+				
+			return ehPredec
+		else:
+			return "O vertice escolhido não pertence ao grafo"
+
+	def ehSucessor(self, vertice1 , vertice2):
+		if(self.verificacaoParametrosEh(vertice1 , vertice2)):
+			sucessoresDeUm = self.obtemSuc(vertice1)
+			ehSuces = False
+			i = 0
+			#while(ehSuces == False and i < len(sucessoresDeUm):
+			while(i < len(sucessoresDeUm) and ehSuces == False):
+				if((str(vertice2) == sucessoresDeUm[i])):
+					ehSuces = True
+				else:
+					ehSuces = False
+				i = i + 1
+				
+			return ehSuces
+					
+			
+
+		else:
+			return "O vertice escolhido não pertence ao grafo"
+
+
+
+	
 			
 	def verificacaoParametrosObtem(self, vertice):
-			qntVertices = len(self.vertices)
-			if(not vertice in self.vertices[0:qntVertices]):
-				return False
-			else:
-				return True
+		qntVertices = len(self.vertices)
+		if(not vertice in self.vertices[0:qntVertices]):
+			return False
+		else:
+			return True
+	
+
+	def verificacaoParametrosEh(self, vertice1, vertice2):
+		qntVertices = len(self.vertices)
+		if((not vertice1 in self.vertices[0:qntVertices]) or (not vertice2 in self.vertices[0:qntVertices])):
+			return False
+		else:
+			return True
