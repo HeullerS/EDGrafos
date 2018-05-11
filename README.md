@@ -20,9 +20,9 @@
 	• Lista de adjacências ✔
 	
 		FUNÇÕES DE VISUALIZAÇÃO
-			obtemVizinhos: X
-			obtemPred: X
-			obtemSuc: X
+			obtemVizinhos: ✔
+			obtemPred: ✔
+			obtemSuc: ✔
 			ehVizinho: X
 			ehPredecessor: X
 			ehSucessor: X
