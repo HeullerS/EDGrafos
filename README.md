@@ -27,8 +27,8 @@
 			ehPredecessor: ✔
 			ehSucessor: ✔
 		FUNÇÕES DE MANIPULAÇÃO
-			delVertice: X
-			delAresta: X
+			delVertice: ✔
+			delAresta: ✔
 			geraSubgrafoIV: X
 			geraSubgrafoIA: X
         
@@ -42,8 +42,8 @@
 			ehPredecessor: ✔
 			ehSucessor: ✔
 		FUNÇÕES DE MANIPULAÇÃO
-			delVertice: ✔
-			delAresta: ✔
+			delVertice: X
+			delAresta: X
 			geraSubgrafoIV: X
 			geraSubgrafoIA: X
 
