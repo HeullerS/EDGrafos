@@ -61,5 +61,5 @@
 	• Olhar casos de loop nas funções da MatrizIncidencia
 	• Olhar casos de grafos direcionado nas funções "eh"
 	• Olhar casos de loop na geraMI
-	• Corrigir casos do indice do vertice nas funções "obtem"
+	•Corrigir casos do indice do vertice nas funções "obtem"
 
