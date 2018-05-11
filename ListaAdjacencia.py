@@ -127,6 +127,32 @@ class ListaAdj(Grafo):
 		else:
 			return "O vertice escolhido não pertence ao grafo"
 
+	def delAresta(self,vertice1, vertice2):
+		if(self.verificacaoParametrosEh(vertice1,vertice2)):
+			tem = False
+			i = 0
+			while(i < len(self.arestas)):
+				if((str(vertice1) in self.arestas[i][0]) and (str(vertice2) in self.arestas[i][1])):
+					self.arestas.pop(i)
+					i = i - 1
+					tem = True
+				i = i + 1
+			
+			sucessores = self.obtemSuc(vertice1)
+			existe = False
+			for i in range(len(sucessores)):
+				if(sucessores[i] == str(vertice2)):
+					existe = True
+			
+			if(existe):
+				self.lista[vertice1].pop(vertice2)
+	
+			#if(not tem):
+				#print ("A aresta escolhida não pertence ao grafo")
+
+		#else:
+			#print("A aresta escolhida não pertence ao grafo")
+
 
 			
 	def verificacaoParametrosObtem(self, vertice):

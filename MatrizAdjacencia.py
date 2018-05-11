@@ -115,7 +115,13 @@ class MatrizAdj(Grafo):
 					self.arestas.pop(i)
 					i = i - 1
 					tem = True
-				i = i + 1					
+				i = i + 1
+			
+			indice1 = self.vertices.index(vertice1)		
+			indice2 = self.vertices.index(vertice2)	
+		
+			self.matriz[indice1][indice2] = '0'
+			
 			#if(not tem):
 				#print ("A aresta escolhida não pertence ao grafo")
 
