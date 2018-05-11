@@ -143,16 +143,54 @@ class ListaAdj(Grafo):
 			for i in range(len(sucessores)):
 				if(sucessores[i] == str(vertice2)):
 					existe = True
-			
+
+			print(sucessores)
+			print(existe)
+			#print(self.lista[vertice1])
+			#print(vertice2)
 			if(existe):
-				self.lista[vertice1].pop(vertice2)
+				contador = 0
+				for i in self.lista[vertice1]:	
+					if(str(vertice2) == self.lista[vertice1][contador][0]):
+						self.lista[vertice1].pop(contador)
+					contador += 1
+				
 	
 			#if(not tem):
 				#print ("A aresta escolhida não pertence ao grafo")
 
 		#else:
 			#print("A aresta escolhida não pertence ao grafo")
+	
+	def geraSubgrafoIV(self, conjuntoVertices):
+		for i in conjuntoVertices:
+			self.delVertice(i)
 
+	def geraSubgrafoIA(self, conjuntoVertices):
+		listaVertices = []
+		for i in conjuntoVertices:
+			self.delAresta(i[0],i[1])
+		
+		listaDosNaoRemove = []
+		print(self.vertices)
+		for i in self.vertices:
+			for j in range(len(self.arestas)):
+				if((self.arestas[j][0] == str(i)) or (self.arestas[j][1] == str(i))):
+					listaDosNaoRemove.append(i)
+		
+		listaDosNaoRemoveSR = list(set(listaDosNaoRemove))
+		
+		
+		achei = False
+		for i in self.vertices:
+			for j in range (len(listaDosNaoRemoveSR)):
+				if(i == listaDosNaoRemoveSR[j]):
+					achei = True
+			if(not achei):
+				self.delVertice(i)
+			#print()
+			achei = False
+		
 
 			
 	def verificacaoParametrosObtem(self, vertice):

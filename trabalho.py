@@ -11,14 +11,15 @@ ponderado = ehPonderado(nomeArquivo)
 grafo = Grafo(listaV, listaA, direcionado, ponderado)
 lista = ListaAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponderado, grafo)
 
-print("VÉRTICES: ", lista.vertices)
-print("ARESTAS: ", lista.arestas)
-print("LISTA: ", lista.lista)
-print("-----------------------")
-print(lista.delAresta(3,1))
-print("VÉRTICES: ", lista.vertices)
-print("ARESTAS: ", lista.arestas)
-print("LISTA: ", lista.lista)
+conjuntoArestas = [[1,2]]
+#print("VÉRTICES: ", lista.vertices)
+#print("ARESTAS: ", lista.arestas)
+print(lista.lista)
+#print("-----------------------")
+lista.geraSubgrafoIA(conjuntoArestas)
+#print("VÉRTICES: ", lista.vertices)
+#print("ARESTAS: ", lista.arestas)
+print(lista.lista)
 
 
 
