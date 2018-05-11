@@ -108,25 +108,17 @@ class MatrizAdj(Grafo):
 	
 	def delAresta(self,vertice1, vertice2):
 		if(self.verificacaoParametrosEh(vertice1,vertice2)):
-			tem = False
 			i = 0
 			while(i < len(self.arestas)):
 				if((str(vertice1) in self.arestas[i][0]) and (str(vertice2) in self.arestas[i][1])): #percorre as arestas do vértice e verifica se existe a aresta que foi passada como parâmetro, caso exista ela é removida 
 					self.arestas.pop(i)
 					i = i - 1
-					tem = True
 				i = i + 1
 			
 			indice1 = self.vertices.index(vertice1)		
 			indice2 = self.vertices.index(vertice2)	
 		
 			self.matriz[indice1][indice2] = '0' #o valor correspondente a aresta na matriz passa a ser 0
-			
-			#if(not tem):
-				#print ("A aresta escolhida não pertence ao grafo")
-
-		#else:
-			#print("A aresta escolhida não pertence ao grafo")
 
 	def geraSubgrafoIA(self, conjuntoArestas):
 		listaVertices = []
