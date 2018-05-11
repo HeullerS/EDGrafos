@@ -144,8 +144,6 @@ class ListaAdj(Grafo):
 				if(sucessores[i] == str(vertice2)):
 					existe = True
 
-			print(sucessores)
-			print(existe)
 			#print(self.lista[vertice1])
 			#print(vertice2)
 			if(existe):
@@ -169,26 +167,30 @@ class ListaAdj(Grafo):
 	def geraSubgrafoIA(self, conjuntoVertices):
 		listaVertices = []
 		for i in conjuntoVertices:
+			print("chamei aresta: ", i)
 			self.delAresta(i[0],i[1])
 		
 		listaDosNaoRemove = []
-		print(self.vertices)
+		contador = 0
 		for i in self.vertices:
 			for j in range(len(self.arestas)):
-				if((self.arestas[j][0] == str(i)) or (self.arestas[j][1] == str(i))):
+				if self.arestas[j][0] == str(i): #or (len(i) == 0)):
 					listaDosNaoRemove.append(i)
+			
+			#conta
 		
 		listaDosNaoRemoveSR = list(set(listaDosNaoRemove))
 		
-		
+		print(listaDosNaoRemove)
 		achei = False
 		for i in self.vertices:
 			for j in range (len(listaDosNaoRemoveSR)):
 				if(i == listaDosNaoRemoveSR[j]):
 					achei = True
+			
 			if(not achei):
+				print("chamei vértice: ", i)
 				self.delVertice(i)
-			#print()
 			achei = False
 		
 

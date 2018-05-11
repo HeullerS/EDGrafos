@@ -188,11 +188,6 @@ def geraLA(grafo):
 
 	return dicionario
 
-
-
-
-
-
 #n5_dir_unwgt_comb0.txt
 #n10_dir_wgt_comb3.txt
 
