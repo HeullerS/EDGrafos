@@ -129,43 +129,21 @@ class MatrizInc(object):
 				return True
 
 	def delAresta(self, vertice1, vertice2):
-		for i in range(len(self.arestas)):
-			if(str(vertice1) == self.arestas[i][0] and str(vertice2) == self.arestas[i][1]):
-				self.arestas.pop(i)
-				print("OIII")
-				return
-	#ver como faz void, nao ta funcionando
-
-''' def delVertice(self,vertice):
-		if(self.verificacaoParametrosObtem(vertice)):
-			i = 0
-			while(i < len(self.arestas)):
-				if((str(vertice) in self.arestas[i][0:2])):
+		if(self.verificacaoParametrosEh(vertice1,vertice2)):
+			for i in range(len(self.arestas)):
+				if(str(vertice1) == self.arestas[i][0] and str(vertice2) == self.arestas[i][1]):
+					self.matriz.pop(i)
 					self.arestas.pop(i)
-					i = i - 1
-				i = i + 1
-			indice = self.vertices.index(vertice)
-			self.vertices.pop(indice)
-			self.matriz.pop(indice)
-			for i in range (len(self.vertices)):
-				self.matriz[i].pop(indice)
-		
+					return
 		else:
 			return "O vertice escolhido não pertence ao grafo"
-	
-	def delAresta(self,vertice1, vertice2):
-		if(self.verificacaoParametrosEh(vertice1,vertice2)):
-			tem = False
-			i = 0
-			while(i < len(self.arestas)):
-				if((str(vertice1) in self.arestas[i][0]) and (str(vertice2) in self.arestas[i][1])):
-					self.arestas.pop(i)
-					i = i - 1
-					tem = True
-				i = i + 1					
-			if(not tem):
-				print ("A aresta escolhida não pertence ao grafo")
 
+	def delVertice(self,vertice):
+		if(self.verificacaoParametrosObtem(vertice)):
+			indiceVertice = self.vertices.index(vertice)
+			for i in range(len(self.arestas)):
+				self.matriz[i].pop(indiceVertice)
+			self.vertices.pop(indiceVertice)
 		else:
-			print("A aresta escolhida não pertence ao grafo")
-'''
+			return "O vertice escolhido não pertence ao grafo"
+
