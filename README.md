@@ -17,7 +17,7 @@
 			geraSubgrafoIV: ✔
 			geraSubgrafoIA: ✔
 
-	• Lista de adjacências X
+	• Lista de adjacências ✔
 	
 		FUNÇÕES DE VISUALIZAÇÃO
 			obtemVizinhos: X
