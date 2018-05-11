@@ -29,7 +29,7 @@
 		FUNÇÕES DE MANIPULAÇÃO
 			delVertice: ✔
 			delAresta: ✔
-			geraSubgrafoIV: X
+			geraSubgrafoIV: ✔
 			geraSubgrafoIA: X
         
 	• Matriz de incidências ✔
