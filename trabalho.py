@@ -9,23 +9,14 @@ listaV = listarVertices(nomeArquivo)
 direcionado = ehDirecionado(nomeArquivo)
 ponderado = ehPonderado(nomeArquivo)
 grafo = Grafo(listaV, listaA, direcionado, ponderado)
-lista = ListaAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponderado, grafo)
+matriz = MatrizAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponderado, grafo)
 
-#listarDesconexos(grafo)
+print(matriz.obtemVizinhos(0))
 
-conjuntoArestas = [[1,2]]
-print("VÉRTICES: ", lista.vertices)
-print("ARESTAS: ", lista.arestas)
-print(lista.lista)
-#print("-----------------------")
-lista.geraSubgrafoIA(conjuntoArestas)
-print("VÉRTICES: ", lista.vertices)
-print("ARESTAS: ", lista.arestas)
-print(lista.lista)
 
 
 
 
 #n5_dir_unwgt_comb0.txt
-#n10_dir_wgt_comb3.txt
-#n20_undir_wgt_comb3.txt
+
+

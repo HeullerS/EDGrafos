@@ -9,9 +9,9 @@ class MatrizAdj(Grafo):
 	def obtemVizinhos(self, vertice):
 		if(self.verificacaoParametrosObtem(vertice)):
 			vizinhos = []
-			posicaoVertice = self.vertices.index(vertice)
+			posicaoVertice = self.vertices.index(vertice) # a posicão do vértice será dada de acordo com seu valor
 			for i in (self.vertices):
-				posicaoI = self.vertices.index(i)
+				posicaoI = self.vertices.index(i) #posicaoI recebe
 				if((self.matriz[posicaoVertice][posicaoI] != '0') or (self.matriz[posicaoI][posicaoVertice] != '0')):
 					vizinhos.append(str(i))
 			return vizinhos

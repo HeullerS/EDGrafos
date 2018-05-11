@@ -187,6 +187,23 @@ def geraLA(grafo):
 
 	return dicionario
 
+
+def converteMAparaLA(matriz, ehDirecionado, ehPonderado):
+	
+	qntVertices = len(matriz)
+	listaVertices = list(range(qntVertices))
+	listaArestas = []
+	for i in range(qntVertices):
+		for j in range(qntVertices):
+			if(matriz[i][j] != '0'):
+				listaArestas.append([str(i),str(j), matriz[i][j]])
+
+	grafo = Grafo(listaVertices, listaArestas, ehDirecionado, ehPonderado)
+	
+
+	return geraLA(grafo)
+
+
 def listarDesconexos(grafo):
 	listaDesconexos = []
 	achei = False
