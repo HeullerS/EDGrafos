@@ -130,11 +130,13 @@ class MatrizInc(object):
 
 	def delAresta(self, vertice1, vertice2):
 		if(self.verificacaoParametrosEh(vertice1,vertice2)):
+			listaIndices = []
 			for i in range(len(self.arestas)):
 				if(str(vertice1) == self.arestas[i][0] and str(vertice2) == self.arestas[i][1]):
-					self.matriz.pop(i)
-					self.arestas.pop(i)
-					return
+					listaIndices.append(int(i))
+			for i in listaIndices:
+				self.matriz.pop(i)
+				self.arestas.pop(i)
 		else:
 			return "O vertice escolhido não pertence ao grafo"
 
@@ -144,6 +146,41 @@ class MatrizInc(object):
 			for i in range(len(self.arestas)):
 				self.matriz[i].pop(indiceVertice)
 			self.vertices.pop(indiceVertice)
+			listaIndices = []
+			for aresta in self.arestas:
+				if str(vertice) in aresta[0:2]:
+					indice = self.arestas.index(aresta)
+					listaIndices.append(indice)
+			listaIndices.sort() #BUGOOOU
+		for i in range(len(listaIndices)):
+			if(i > 0):
+				listaIndices[i] = listaIndices[i] - 1
+			self.arestas.pop(listaIndices[i])
+				
+
 		else:
 			return "O vertice escolhido não pertence ao grafo"
 
+	def geraSubgrafoIA(self, conjuntoArestas):
+		listaVertices = []
+		for arestaDel in conjuntoArestas:
+			print("Deletou: ",arestaDel)
+			self.delAresta(arestaDel[0],arestaDel[1])
+		for vertice in self.vertices: #Trata o caso do vertice ficar isolado
+			deletouAresta = False
+			sobrouAresta = False
+			for arestaDel in conjuntoArestas:
+				if vertice in arestaDel[0:2]:#Verifica se o vertice esta na lista de arestas deletadas
+					deletouAresta = True
+			for arestaSobrou in self.arestas:
+				if vertice in arestaSobrou[0:2]:#Verifica se o vertice esta na lista de arestas que sobraram
+					sobrouAresta = True
+			if(deletouAresta == True) and (sobrouAresta == False):# Se o vertice esta na lista de arestas deletadas e nao sobrou arestas com o vertice, ele é deletado
+				print("DELETAR: ", vertice)
+				self.delVertice(vertice)
+'''
+	def geraSubgrafoIV(self, conjuntoVertices):
+		for i in conjuntoVertices:
+			self.delVertice(i)
+
+'''

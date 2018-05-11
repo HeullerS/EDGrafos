@@ -43,9 +43,9 @@
 			ehPredecessor: ✔
 			ehSucessor: ✔
 		FUNÇÕES DE MANIPULAÇÃO
-			delVertice: X
-			delAresta: X
-			geraSubgrafoIV: X
+			delVertice: ✔
+			delAresta: ✔
+			geraSubgrafoIV: ✔
 			geraSubgrafoIA: X
 
 <h1>CONVERSÕES</h1>
@@ -61,5 +61,6 @@
 	• Olhar casos de loop nas funções da MatrizIncidencia
 	• Olhar casos de grafos direcionado nas funções "eh"
 	• Olhar casos de loop na geraMI
-	•Corrigir casos do indice do vertice nas funções "obtem"
+	• Corrigir casos do indice do vertice nas funções "obtem"
+	• Corrigi geraSubgrafoIA - manter vertices que ja eram isolados antes
 

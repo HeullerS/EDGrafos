@@ -124,11 +124,14 @@ def geraMA(grafo):
 #Função que imprime as Matrizes de Adjacência/Incidência
 def imprimirMatriz(matriz):
 	linhas = len(matriz)
-	colunas = len(matriz[0])
-	for i in range(linhas):
-		for j in range(colunas):
-			print(matriz[i][j]," ",end = "")
-		print()
+	if (linhas != 0):
+		colunas = len(matriz[0])
+		for i in range(linhas):
+			for j in range(colunas):
+				print(matriz[i][j]," ",end = "")
+			print()
+	else:
+		print("Matriz Vazia")
 
 def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
 	qntArestas = len(matriz)
