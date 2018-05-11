@@ -170,22 +170,24 @@ class ListaAdj(Grafo):
 			print("chamei aresta: ", i)
 			self.delAresta(i[0],i[1])
 		
-		listaDosNaoRemove = []
-		contador = 0
+
+		listaDosNaoRemove = funcoes.listarDesconexos(self.grafo)
+		#listaDosNaoRemove = []
+
+
 		for i in self.vertices:
 			for j in range(len(self.arestas)):
 				if self.arestas[j][0] == str(i): #or (len(i) == 0)):
-					listaDosNaoRemove.append(i)
+					listaDosNaoRemove.append(str(i))
 			
 			#conta
 		
 		listaDosNaoRemoveSR = list(set(listaDosNaoRemove))
-		
-		print(listaDosNaoRemove)
+
 		achei = False
 		for i in self.vertices:
 			for j in range (len(listaDosNaoRemoveSR)):
-				if(i == listaDosNaoRemoveSR[j]):
+				if(str(i) == listaDosNaoRemoveSR[j]):
 					achei = True
 			
 			if(not achei):

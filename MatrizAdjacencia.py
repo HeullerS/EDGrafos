@@ -133,12 +133,19 @@ class MatrizAdj(Grafo):
 		for i in conjuntoVertices:
 			self.delAresta(i[0],i[1])
 		
-		listaDosNaoRemove = []
-		print(self.vertices)
+		listaDosNaoRemove = funcoes.listarDesconexos(self.grafo)
+
+		
+
+
+
+
+
+		#print(self.vertices)
 		for i in self.vertices:
 			for j in range(len(self.arestas)):
 				if((self.arestas[j][0] == str(i)) or (self.arestas[j][1] == str(i))):
-					listaDosNaoRemove.append(i)
+					listaDosNaoRemove.append(str(i))
 		
 		listaDosNaoRemoveSR = list(set(listaDosNaoRemove))
 		
@@ -146,7 +153,7 @@ class MatrizAdj(Grafo):
 		achei = False
 		for i in self.vertices:
 			for j in range (len(listaDosNaoRemoveSR)):
-				if(i == listaDosNaoRemoveSR[j]):
+				if(str(i) == listaDosNaoRemoveSR[j]):
 					achei = True
 			if(not achei):
 				self.delVertice(i)

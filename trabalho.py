@@ -9,17 +9,19 @@ listaV = listarVertices(nomeArquivo)
 direcionado = ehDirecionado(nomeArquivo)
 ponderado = ehPonderado(nomeArquivo)
 grafo = Grafo(listaV, listaA, direcionado, ponderado)
-matriz = MatrizAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponderado, grafo)
+lista = ListaAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponderado, grafo)
+
+#listarDesconexos(grafo)
 
 conjuntoArestas = [[1,2]]
-#print("VÉRTICES: ", lista.vertices)
-#print("ARESTAS: ", lista.arestas)
-print(matriz.arestas)
+print("VÉRTICES: ", lista.vertices)
+print("ARESTAS: ", lista.arestas)
+print(lista.lista)
 #print("-----------------------")
-matriz.geraSubgrafoIA(conjuntoArestas)
-#print("VÉRTICES: ", lista.vertices)
-#print("ARESTAS: ", lista.arestas)
-print(matriz.arestas)
+lista.geraSubgrafoIA(conjuntoArestas)
+print("VÉRTICES: ", lista.vertices)
+print("ARESTAS: ", lista.arestas)
+print(lista.lista)
 
 
 
