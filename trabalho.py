@@ -11,8 +11,10 @@ ponderado = ehPonderado(nomeArquivo)
 grafo = Grafo(listaV, listaA, direcionado, ponderado)
 lista = ListaAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponderado, grafo)
 
-print(lista.lista)
-print(lista.ehPredecessor(3,1))
+
+
+print(lista.delVertice(1))
+
 
 
 #n5_dir_unwgt_comb0.txt

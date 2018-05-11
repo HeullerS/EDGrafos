@@ -111,9 +111,23 @@ class ListaAdj(Grafo):
 		else:
 			return "O vertice escolhido não pertence ao grafo"
 
-
-
 	
+	def delVertice(self,vertice):
+		if(self.verificacaoParametrosObtem(vertice)):
+			i = 0
+			while(i < len(self.arestas)):
+				if((str(vertice) in self.arestas[i][0:2])):
+					self.arestas.pop(i)
+					i = i - 1
+				i = i + 1
+			del(self.lista[vertice])
+			indice = self.vertices.index(vertice)
+			self.vertices.pop(indice)
+		
+		else:
+			return "O vertice escolhido não pertence ao grafo"
+
+
 			
 	def verificacaoParametrosObtem(self, vertice):
 		qntVertices = len(self.vertices)
