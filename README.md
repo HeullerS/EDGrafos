@@ -30,7 +30,7 @@
 			delVertice: ✔
 			delAresta: ✔
 			geraSubgrafoIV: ✔
-			geraSubgrafoIA: X
+			geraSubgrafoIA: ✔
         
 	• Matriz de incidências ✔
 	
