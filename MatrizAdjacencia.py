@@ -135,20 +135,12 @@ class MatrizAdj(Grafo):
 		
 		listaDosNaoRemove = funcoes.listarDesconexos(self.grafo)
 
-		
-
-
-
-
-
-		#print(self.vertices)
 		for i in self.vertices:
 			for j in range(len(self.arestas)):
 				if((self.arestas[j][0] == str(i)) or (self.arestas[j][1] == str(i))):
 					listaDosNaoRemove.append(str(i))
 		
 		listaDosNaoRemoveSR = list(set(listaDosNaoRemove))
-		
 		
 		achei = False
 		for i in self.vertices:

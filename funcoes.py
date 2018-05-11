@@ -163,7 +163,6 @@ def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
 
 def geraLA(grafo):
 	
-	#grafo.arestas
 	listaAdjacencia = []
 	for i in range (len(grafo.vertices)):
 		listaAdjacencia.append([])
@@ -189,7 +188,6 @@ def geraLA(grafo):
 	return dicionario
 
 def listarDesconexos(grafo):
-	print(grafo.arestas)
 	listaDesconexos = []
 	achei = False
 	for i in range(len(grafo.vertices)):
@@ -201,6 +199,7 @@ def listarDesconexos(grafo):
 		achei = False
 	
 	return listaDesconexos
+
 #n5_dir_unwgt_comb0.txt
 #n10_dir_wgt_comb3.txt
 

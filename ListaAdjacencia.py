@@ -29,15 +29,11 @@ class ListaAdj(Grafo):
 				verticeLigado = posicaoVertice[contador][0]
 				contador += 1
 		
-		
 		return sucessores
 
 	def obtemPred(self, vertice):
 		if(self.verificacaoParametrosObtem(vertice)):
 			predecessores = []
-			#posicaoVertice = self.lista[vertice]
-			
-			#contador = 0
 			for i in self.lista:
 				posicaoI = self.lista[i]
 				for j in range(len(posicaoI)):
@@ -53,12 +49,8 @@ class ListaAdj(Grafo):
 
 	def ehVizinho(self, vertice1 , vertice2):
 		if(self.verificacaoParametrosEh(vertice1 , vertice2)):
-			
-
 			vizinhosDeUm = self.obtemVizinhos(vertice1)
 			vizinhosDeDois = self.obtemVizinhos(vertice2)
-			print(vizinhosDeUm)
-			print(vizinhosDeDois)
 			
 			ehVizinhos = False
 			for i in vizinhosDeUm:
@@ -96,7 +88,6 @@ class ListaAdj(Grafo):
 			sucessoresDeUm = self.obtemSuc(vertice1)
 			ehSuces = False
 			i = 0
-			#while(ehSuces == False and i < len(sucessoresDeUm):
 			while(i < len(sucessoresDeUm) and ehSuces == False):
 				if((str(vertice2) == sucessoresDeUm[i])):
 					ehSuces = True
@@ -106,8 +97,6 @@ class ListaAdj(Grafo):
 				
 			return ehSuces
 					
-			
-
 		else:
 			return "O vertice escolhido não pertence ao grafo"
 
@@ -144,8 +133,6 @@ class ListaAdj(Grafo):
 				if(sucessores[i] == str(vertice2)):
 					existe = True
 
-			#print(self.lista[vertice1])
-			#print(vertice2)
 			if(existe):
 				contador = 0
 				for i in self.lista[vertice1]:	
@@ -167,20 +154,14 @@ class ListaAdj(Grafo):
 	def geraSubgrafoIA(self, conjuntoVertices):
 		listaVertices = []
 		for i in conjuntoVertices:
-			print("chamei aresta: ", i)
 			self.delAresta(i[0],i[1])
 		
-
 		listaDosNaoRemove = funcoes.listarDesconexos(self.grafo)
-		#listaDosNaoRemove = []
-
 
 		for i in self.vertices:
 			for j in range(len(self.arestas)):
-				if self.arestas[j][0] == str(i): #or (len(i) == 0)):
+				if self.arestas[j][0] == str(i): 
 					listaDosNaoRemove.append(str(i))
-			
-			#conta
 		
 		listaDosNaoRemoveSR = list(set(listaDosNaoRemove))
 
@@ -191,11 +172,8 @@ class ListaAdj(Grafo):
 					achei = True
 			
 			if(not achei):
-				print("chamei vértice: ", i)
 				self.delVertice(i)
 			achei = False
-		
-
 			
 	def verificacaoParametrosObtem(self, vertice):
 		qntVertices = len(self.vertices)
