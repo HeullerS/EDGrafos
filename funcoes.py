@@ -35,12 +35,12 @@ def listarArestas(arq):
 	#à aresta. Ao final  temos como retorno uma lista de listas 
 	#Cada elemento da lista final possui 3 valores(u, v, p) em que
 	#u e v são vértices e p representa o peso da aresta.
-	if(ehPonderado(arq)): 	
+	if(ehPonderado(arq)):
 		for linha in arquivo:
 			lista.append(linha.split())
 	else:
 		for linha in arquivo:
-			linha += str(1)		
+			linha += str(1)	
 			lista.append(linha.split())
 	arquivo.close()
 	return lista
@@ -48,7 +48,7 @@ def listarArestas(arq):
 
 #Função que cria uma lista em que cada elemento dessa lista 
 #é um vértice
-def listarVertices(arq):
+def listarValoresVertices(arq):
 	qntdVertices  = ""
 	indice = 1
 	while(arq[indice] != "_"): #Extrai a quantidade de vértices do nme do arquivo
@@ -59,6 +59,7 @@ def listarVertices(arq):
 
 #Função que gera uma matriz de incidência a partir de um grafo
 def geraMI(grafo):
+	#FAZER CASO DO LOOP
 	lin = len(grafo.arestas)
 	col = len(grafo.vertices)
 	matriz = []
@@ -123,11 +124,14 @@ def geraMA(grafo):
 #Função que imprime as Matrizes de Adjacência/Incidência
 def imprimirMatriz(matriz):
 	linhas = len(matriz)
-	colunas = len(matriz[0])
-	for i in range(linhas):
-		for j in range(colunas):
-			print(matriz[i][j]," ",end = "")
-		print()
+	if (linhas != 0):
+		colunas = len(matriz[0])
+		for i in range(linhas):
+			for j in range(colunas):
+				print(matriz[i][j]," ",end = "")
+			print()
+	else:
+		print("Matriz Vazia")
 
 def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
 	qntArestas = len(matriz)
@@ -217,10 +221,6 @@ def listarDesconexos(grafo):
 	
 	return listaDesconexos
 
+
 #n5_dir_unwgt_comb0.txt
 #n10_dir_wgt_comb3.txt
-
-
-
-
-

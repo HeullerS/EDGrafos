@@ -2,9 +2,7 @@
 class Grafo(object):
 	def __init__(self,listaVertices, listaArestas, ehDirecionado, ehPonderado):
 		self.vertices = listaVertices
-		listaArestas.sort()		
+		listaArestas.sort()
 		self.arestas = listaArestas
 		self.direcionado = ehDirecionado
 		self.ponderado = ehPonderado
-
-

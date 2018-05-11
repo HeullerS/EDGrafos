@@ -6,12 +6,12 @@ class ListaAdj(Grafo):
 		self.grafo = grafo
 		self.lista = funcoes.geraLA(grafo)
 
-	def obtemVizinhos(self, vertice):
-		if(self.verificacaoParametrosObtem(vertice)):
+	def obtemVizinhos(self, vertice): 
+		if(self.verificacaoParametrosObtem(vertice)): #vizinhos são obtidos por meio de seus sucessores e predecessores
 			sucessores = self.obtemSuc(vertice)
 			predecessores = self.obtemPred(vertice)
-			vizinhos = sucessores + predecessores
-			vizinhos = list(set(vizinhos))
+			vizinhos = sucessores + predecessores 
+			vizinhos = list(set(vizinhos)) #caso haja vértices que são sucessores e predecessores, esses são removidos
 			vizinhos.sort()
 			
 			return vizinhos
