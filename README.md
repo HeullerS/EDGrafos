@@ -31,7 +31,7 @@
 			delAresta: X
 			geraSubgrafoIV: X
 			geraSubgrafoIA: X
-        
+
 	• Matriz de incidências ✔
 	
 		FUNÇÕES DE VISUALIZAÇÃO
