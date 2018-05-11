@@ -161,6 +161,40 @@ def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
 	grafo = Grafo(listaVertices, listaArestas, ehDirecionado, ehPonderado)	
 	return geraMA(grafo)
 
+def geraLA(grafo):
+	
+	#grafo.arestas
+	listaAdjacencia = []
+	for i in range (len(grafo.vertices)):
+		listaAdjacencia.append([])
+	print(listaAdjacencia)
+	
+	listinha1 = []
+	listinha2 = []
+	for i in range(len(grafo.arestas)):
+		print("TODOS")
+		print("posicao na lista de adjacência: ", grafo.arestas[i][0])
+		print("valor a ser inserido: ", grafo.arestas[i][1], " ", grafo.arestas[i][2])
+		listinha1.append(grafo.arestas[i][1])
+		listinha1.append(grafo.arestas[i][2])
+		listaAdjacencia[int(grafo.arestas[i][0])].append(listinha1)
+		if(not grafo.direcionado):
+			listinha2.append(grafo.arestas[i][0])
+			listinha2.append(grafo.arestas[i][2])
+			print("DIRECIONADO")
+			print("posicao na lista de adjacência: ", grafo.arestas[i][0])
+			print("valor a ser inserido: ", grafo.arestas[i][0], " ", grafo.arestas[i][2])
+			listaAdjacencia[int(grafo.arestas[i][1])].append(listinha2)
+		listinha1 = []
+		listinha2 = []
+
+	return listaAdjacencia
+
+
+
+
+
+
 #n5_dir_unwgt_comb0.txt
 #n10_dir_wgt_comb3.txt
 
