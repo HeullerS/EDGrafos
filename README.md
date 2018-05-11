@@ -23,9 +23,9 @@
 			obtemVizinhos: ✔
 			obtemPred: ✔
 			obtemSuc: ✔
-			ehVizinho: X
-			ehPredecessor: X
-			ehSucessor: X
+			ehVizinho: ✔
+			ehPredecessor: ✔
+			ehSucessor: ✔
 		FUNÇÕES DE MANIPULAÇÃO
 			delVertice: X
 			delAresta: X
