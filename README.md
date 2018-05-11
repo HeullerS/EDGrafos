@@ -35,15 +35,15 @@
 	• Matriz de incidências ✔
 	
 		FUNÇÕES DE VISUALIZAÇÃO
-			obtemVizinhos: X
-			obtemPred: X
-			obtemSuc: X
-			ehVizinho: X
-			ehPredecessor: X
-			ehSucessor: X
+			obtemVizinhos:✔
+			obtemPred: ✔
+			obtemSuc: ✔
+			ehVizinho: ✔
+			ehPredecessor: ✔
+			ehSucessor: ✔
 		FUNÇÕES DE MANIPULAÇÃO
-			delVertice: X
-			delAresta: X
+			delVertice: ✔
+			delAresta: ✔
 			geraSubgrafoIV: X
 			geraSubgrafoIA: X
 
