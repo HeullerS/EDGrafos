@@ -18,7 +18,7 @@ print("Matriz Original")
 imprimirMatriz(matriz.matriz)
 print("Vertices:", matriz.vertices)
 print("Arestas:",matriz.arestas)
-
+matriz.geraSubgrafoIA([[1,2],[3,4],[0,3]])
 
 
 
