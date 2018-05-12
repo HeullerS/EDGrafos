@@ -80,7 +80,7 @@ def geraMI(grafo):
 
 
 #Função que converte uma Matriz de adjacência em uma Matriz de incidência
-def converteMAParaMI(matriz,ehDirecionado, ehPonderado):
+def converteMAparaMI(matriz,ehDirecionado, ehPonderado):
 	tamanho = len(matriz)
 	listaVertices = list(range(tamanho))
 	listaArestas = []
