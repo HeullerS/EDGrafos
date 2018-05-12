@@ -141,7 +141,7 @@ def imprimirLista(lista):
 
 
 
-def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
+def converteMIparaMA(matriz, ehDirecionado, ehPonderado):
 	qntArestas = len(matriz)
 	qntVertices = len(matriz[0])
 	listaArestas = []

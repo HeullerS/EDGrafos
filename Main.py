@@ -2,6 +2,7 @@ from funcoes import *
 from Grafo import *
 from MatrizAdjacencia import *
 from MatrizIncidencia import *
+from ListaAdjacencia import *
 
 print("Bem vindo ao manipulador de grafos")
 nomeArquivo = input("Digite o nome do arquivo: ")
@@ -17,7 +18,8 @@ print("Digite o número correspondente:")
 print("1. Matriz de Adjacência")
 print("2. Matriz de Incidência")
 print("3. Lista de Adjacência")
-opcaoEst = input()
+print()
+opcaoEst = input("Digitar: ")
 if opcaoEst == '1':
 	matrizAdj = MatrizAdj(grafo.vertices, grafo.arestas, grafo.direcionado,grafo.ponderado, grafo)
 
@@ -44,7 +46,8 @@ while(opcaoFunc != '13'):
 	print("  11. Gera Subgrafo Induzido por Vertices")
 	print("  12. Converter")	
 	print("  13. Encerrar execução")
-	opcaoFunc = input()
+	print()
+	opcaoFunc = input("Digitar: ")
 	if opcaoFunc == '1':#Imprimir
 		if opcaoEst == '1':
 			print("Matriz de Adjacência:")
@@ -53,7 +56,7 @@ while(opcaoFunc != '13'):
 			print("Matriz de Incidência:")
 			imprimirMatriz(matrizInc.matriz)
 		elif opcaoEst == '3':
-			print("Lista de Incidência:")
+			print("Lista de Adjacência:")
 			imprimirLista(listaAdj.lista)
 	
 
@@ -163,35 +166,35 @@ while(opcaoFunc != '13'):
 			listaArestas.append([vertice1,vertice2])
 		if opcaoEst == '1':
 			print(" Nova Matriz de Adjacência:")
-			matrizAdj.geraSubgrafoIA(listaArestas))
+			matrizAdj.geraSubgrafoIA(listaArestas)
 			imprimirMatriz(matrizAdj.matriz)
 		elif opcaoEst == '2':
 			print("Nova Matriz de Incidência:")
-			matrizInc.geraSubgrafoIA(listaArestas)) # CONFERIRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+			matrizInc.geraSubgrafoIA(listaArestas)
 			imprimirMatriz(matrizInc.matriz)
 		elif opcaoEst == '3':
 			print("Nova Lista de Incidência:")
-			listaAdj.geraSubgrafoIA(listaArestas))
+			listaAdj.geraSubgrafoIA(listaArestas)
 			imprimirLista(listaAdj.lista)
 	
 	
 	if opcaoFunc == '11':#Gera Subgrafo Induzido por Vértices
 		quantidadeVertices = int(input("Quantidade de Vértices a serem deletados"))
-			listaVertices = []
+		listaVertices = []
 		for i in range(quantidadeVertices):
-			vertice = int(input("Insira o vértice"))
+			vertice = int(input("Insira o vértice: "))
 			listaVertices.append(vertice)
 		if opcaoEst == '1':
 			print(" Nova Matriz de Adjacência:")
-			matrizAdj.geraSubgrafoIV(listaVertices))
+			matrizAdj.geraSubgrafoIV(listaVertices)
 			imprimirMatriz(matrizAdj.matriz)
 		elif opcaoEst == '2':
 			print("Nova Matriz de Incidência:")
-			matrizInc.geraSubgrafoIV(listaVertices)) # CONFERIRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+			matrizInc.geraSubgrafoIV(listaVertices)
 			imprimirMatriz(matrizInc.matriz)
 		elif opcaoEst == '3':
 			print("Nova Lista de Incidência:")
-			listaAdj.geraSubgrafoIV(listaVertices))
+			listaAdj.geraSubgrafoIV(listaVertices)
 			imprimirLista(listaAdj.lista)
 
 	if opcaoFunc == '12':
@@ -200,34 +203,34 @@ while(opcaoFunc != '13'):
 		if opcaoEst == '1':
 			print("   1. Converter Matriz de Adjacência para Matriz de Incidência")
 			print("   2. Converter Matriz de Adjacência para Lista de Adjacência")
-			opcaoConv = input()
+			opcaoConv = input("Digitar: ")
 			if opcaoConv == '1':
 				matrizInc = converteMAparaMI(matrizAdj.matriz,matrizAdj.direcionado,matrizAdj.ponderado)
-				opcaoFunc = '2'
+				imprimirMatriz(matrizInc.matriz)
 			elif opcaoConv == '2':
 				listaAdj = converteMAparaLA(matrizAdj.matriz,matrizAdj.direcionado,matrizAdj.ponderado)
-				opcaoFunc = '3'
+				imprimirLista(listaAdj.lista)
 		if opcaoEst == '2':
 			print("   1. Converter Matriz de Incidência para Matriz de Adjacência")
 			print("   2. Converter Matriz de Incidência para Lista de Adjacência")
-			opcaoConv = input()
+			opcaoConv = input("Digitar: ")
 			if opcaoConv == '1':
 				matrizAdj = converteMIparaMA(matrizInc.matriz,matrizInc.direcionado,matrizInc.ponderado)
-				opcaoFunc = '1'
+				imprimirMatriz(matrizAdj.matriz)
 			elif opcaoConv == '2':
 				listaAdj = converteMIparaLA(matrizInc.matriz,matrizInc.direcionado,matrizInc.ponderado)
-				opcaoFunc = '3'
+				imprimirLista(listaAdj.lista)
 		if opcaoEst == '3':
 			print("   1. Converter Lista de Adjacência para Matriz de Incidência")
 			print("   2. Converter Lista de Adjacência para Matriz de Adjacência")
-			opcaoConv = input()
+			opcaoConv = input("Digitar: ")
 			if opcaoConv == '1':
 				matrizInc = converteLAparaMI(listaAdj.lista,listaAdj.direcionado,listaAdj.ponderado)
-				opcaoFunc = '2'
+				imprimirMatriz(matrizInc.matriz)
 			elif opcaoConv == '2':
 				matrizAdj = converteLAparaMA(listaAdj.lista,listaAdj.direcionado,listaAdj.ponderado)
+				imprimirMatriz(matrizAdj.matriz)
 				opcaoFunc = '1'
 		
 print()
-print("Execução Encerrada")			
-#n5_dir_unwgt_comb0.txt
+print("Execução Encerrada")
