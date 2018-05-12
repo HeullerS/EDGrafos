@@ -133,6 +133,14 @@ def imprimirMatriz(matriz):
 	else:
 		print("Matriz Vazia")
 
+
+def imprimirLista(lista):
+	
+	print(lista)
+
+
+
+
 def converteMIParaMA(matriz, ehDirecionado, ehPonderado):
 	qntArestas = len(matriz)
 	qntVertices = len(matriz[0])
@@ -178,7 +186,7 @@ def geraLA(grafo):
 	
 	listinha1 = []
 	listinha2 = []
-	for i in range(len(grafo.arestas)):
+	for i in range(len(grafo.arestas)): #é criado um dicionário, em que cada vértice possui sua chave. Os elementos do dicionário são as arestas
 		listinha1.append(grafo.arestas[i][1])
 		listinha1.append(grafo.arestas[i][2])
 		listaAdjacencia[int(grafo.arestas[i][0])].append(listinha1)
@@ -199,16 +207,46 @@ def converteMAparaLA(matriz, ehDirecionado, ehPonderado):
 	listaArestas = []
 	for i in range(qntVertices):
 		for j in range(qntVertices):
-			if(matriz[i][j] != '0'):
+			if(matriz[i][j] != '0'): # é percorrida toda matriz e ao final é achada a lista de arestas
 				listaArestas.append([str(i),str(j), matriz[i][j]])
 
 	grafo = Grafo(listaVertices, listaArestas, ehDirecionado, ehPonderado)
 	
 
+	return geraLA(grafo) #geração da LA por meio do grafo instanciado
+
+
+
+
+'''
+
+def converteLAparaMA(lista, ehDirecionado, ehPonderado):
+	listaV = lista.vertices
+	listaA = lista.arestas
+	grafo = Grafo(listaV, listaA, ehDirecionado, ehPonderado)
+	
+	return geraMA(grafo)
+
+
+def converteLAparaMI(lista, ehDirecionado, ehPonderado):
+	listaV = lista.vertices
+	listaA = lista.arestas
+	grafo = Grafo(listaV, listaA, ehDirecionado, ehPonderado)
+	
+	return geraMI(grafo)
+
+
+def converteMIparaLA(matriz, ehDirecionado, ehPonderado):
+	
+	listaV = matriz.vertices
+	listaA = matriz.arestas
+	grafo = Grafo(listaV, listaA, ehDirecionado, ehPonderado)
+	
 	return geraLA(grafo)
 
+'''
 
-def listarDesconexos(grafo):
+def listarDesconexos(grafo): #função que retorna uma lista dos vértices desconexos no grafo
 	listaDesconexos = []
 	achei = False
 	for i in range(len(grafo.vertices)):
